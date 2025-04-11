@@ -72,3 +72,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+Unity/Goremet Chef/Library/Artifacts/6b/
+
+Unity/Goremet Chef/Library/
+
+Unity/Goremet Chef/Logs/
+
+Unity/Goremet Chef/Temp/
+
+Unity/Goremet Chef/UserSettings/
