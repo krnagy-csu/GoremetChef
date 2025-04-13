@@ -155,5 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b57096e547c8b34cbcb0564ee97109d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropPrefab: {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
+  possibleDrops:
+  - {fileID: 4341595191252173405, guid: daf8db120f3798640aa02cd5ff96232a, type: 3}
+  - {fileID: 2383669548115723048, guid: b358cb060c648954397f7553c8c15446, type: 3}
+  - {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
   dropOrigin: {fileID: 8241981244868512338}
