@@ -16,6 +16,7 @@ public class EntityMover : MonoBehaviour
     public int timesToFlee = 2;
 
     [Header("Wander Settings")]
+    public bool wander = true;
     public float wanderRadius = 3.0f;
     public float minTimeToWander = 1.0f;
     public float maxTimeToWander = 10.0f;
@@ -24,6 +25,10 @@ public class EntityMover : MonoBehaviour
     public Color sightRadiusColor;
     bool spooked;
     Vector3 startPos;
+
+    public Transform player;
+    private float timer = 0;
+    private NavMeshAgent agent;
 
     private void OnDrawGizmos()
     {
@@ -34,10 +39,30 @@ public class EntityMover : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
+        agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        
+        if (wander)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                Wander();
+            }
+        }
+    }
+
+    /// <summary>
+    /// When called, picks a random point within wanderRadius and sets it as the AI navigation destination.
+    /// </summary>
+    private void Wander() {
+        float direction = Random.Range(0, 360);
+        direction = Mathf.Deg2Rad * direction;
+        float distance = Random.Range(0, wanderRadius);
+        Vector3 finalPos = startPos + (new Vector3(Mathf.Cos(direction), 0, Mathf.Sin(direction))) * distance;
+        agent.SetDestination(finalPos);
+        timer = Random.Range(minTimeToWander, maxTimeToWander);
     }
 }
