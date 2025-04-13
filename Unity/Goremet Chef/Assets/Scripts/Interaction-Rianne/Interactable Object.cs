@@ -19,7 +19,7 @@ public class InteractableObject : MonoBehaviour
     //This is when the object is hit.
     public void TakeDamage()
     {
-        Debug.Log("Ouch! Hit " + gameObject.name);
+        Debug.Log("Ouch! I'm " + gameObject.name);
     }
 
     private void Die()
