@@ -224,22 +224,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1886215983257936916, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
-      propertyPath: possibleDrops.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886215983257936916, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
-      propertyPath: 'possibleDrops.Array.data[0]'
-      value: 
-      objectReference: {fileID: 4341595191252173405, guid: daf8db120f3798640aa02cd5ff96232a, type: 3}
-    - target: {fileID: 1886215983257936916, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
-      propertyPath: 'possibleDrops.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2383669548115723048, guid: b358cb060c648954397f7553c8c15446, type: 3}
-    - target: {fileID: 1886215983257936916, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
-      propertyPath: 'possibleDrops.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
     - target: {fileID: 5799405468582069546, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
       propertyPath: m_Name
       value: Garbage Can
@@ -314,22 +298,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2897733929344224011, guid: 3d1c3506cc03f3141b63f448a9c4cc82, type: 3}
-      propertyPath: possibleDrops.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2897733929344224011, guid: 3d1c3506cc03f3141b63f448a9c4cc82, type: 3}
-      propertyPath: 'possibleDrops.Array.data[0]'
-      value: 
-      objectReference: {fileID: 4341595191252173405, guid: daf8db120f3798640aa02cd5ff96232a, type: 3}
-    - target: {fileID: 2897733929344224011, guid: 3d1c3506cc03f3141b63f448a9c4cc82, type: 3}
-      propertyPath: 'possibleDrops.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2383669548115723048, guid: b358cb060c648954397f7553c8c15446, type: 3}
-    - target: {fileID: 2897733929344224011, guid: 3d1c3506cc03f3141b63f448a9c4cc82, type: 3}
-      propertyPath: 'possibleDrops.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
     - target: {fileID: 3537771027536142712, guid: 3d1c3506cc03f3141b63f448a9c4cc82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.760017
@@ -501,22 +469,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2018153417773870330, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
-      propertyPath: possibleDrops.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2018153417773870330, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
-      propertyPath: 'possibleDrops.Array.data[0]'
-      value: 
-      objectReference: {fileID: 4341595191252173405, guid: daf8db120f3798640aa02cd5ff96232a, type: 3}
-    - target: {fileID: 2018153417773870330, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
-      propertyPath: 'possibleDrops.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2383669548115723048, guid: b358cb060c648954397f7553c8c15446, type: 3}
-    - target: {fileID: 2018153417773870330, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
-      propertyPath: 'possibleDrops.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
     - target: {fileID: 3995719548348014833, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.4936156
