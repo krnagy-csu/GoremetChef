@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2897733929344224011}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b57096e547c8b34cbcb0564ee97109d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPrefab: {fileID: 0}
+  dropOrigin: {fileID: 0}
