@@ -9,13 +9,27 @@ using UnityEngine;
 public class PlayerKitchenInteractions : MonoBehaviour {
     
     [SerializeField] private GameObject[] inventory = new GameObject[5]; //inventory size of 5
-    private int top = -1; // stack structure
+    [SerializeField] private int top = -1; // stack structure
+    public Transform raycastOrigin;
     
     private void Update() {
 
         if (Input.GetKeyDown(KeyCode.E)) {
-            
+            PlaceDown();
         }
+    }
+
+    private void PlaceDown() {
+        if (Physics.Raycast(raycastOrigin.position, Vector3.forward * 2, out RaycastHit hit)) {
+            Debug.Log(hit.collider.gameObject.name);
+        }
+    }
+    
+    void OnDrawGizmos()
+    {
+        if (raycastOrigin == null) return;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(raycastOrigin.transform.position, raycastOrigin.transform.forward*2);
     }
     
     // should be called in pair with removeFromInventory
