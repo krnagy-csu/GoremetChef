@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Interactable
   - HidingSpot
+  - ClearCounter
+  - CuttingCounter
   layers:
   - Default
   - TransparentFX

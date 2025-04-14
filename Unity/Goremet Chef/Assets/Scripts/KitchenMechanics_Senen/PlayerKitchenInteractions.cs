@@ -3,25 +3,37 @@ using UnityEngine;
 
 
 /* Senen Bagos
- * 
+ * this class will handle the interaction of picking up and placing down objects on the counters
+ * and cookware. 
  * 
  */
 public class PlayerKitchenInteractions : MonoBehaviour {
     
-    [SerializeField] private GameObject[] inventory = new GameObject[5]; //inventory size of 5
-    [SerializeField] private int top = -1; // stack structure
+    [SerializeField] private GameObject[] inventory = new GameObject[5]; 
+    //inventory size of 5, can be changed in future
+    [SerializeField] private int top = -1; 
+    // stack structure IN INSPECTOR YOU CAN EDIT IT AND THATS STRICTLY FOR TESTING
     public Transform raycastOrigin;
     
     private void Update() {
-
         if (Input.GetKeyDown(KeyCode.E)) {
             PlaceDown();
         }
     }
 
     private void PlaceDown() {
+        // sends a forward raycast to see which object it hits
+        // it can hit in object but only checks for counters
         if (Physics.Raycast(raycastOrigin.position, Vector3.forward * 2, out RaycastHit hit)) {
-            Debug.Log(hit.collider.gameObject.name);
+            if (hit.collider.gameObject.CompareTag("ClearCounter")) {
+                ClearCounter clearCounter = hit.collider.gameObject.GetComponent<ClearCounter>();
+                if (clearCounter is not null) {
+                    // if a clear counter exists, call this function that will handle picking up
+                    // and putting down
+                    clearCounter.Interact(this);
+                    Debug.Log("Got ClearCounter component!");
+                }
+            }
         }
     }
     
@@ -58,6 +70,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
             top--;
         }
     }
+    
     public bool inventoryIsEmpty() {
         return top == -1;
     }

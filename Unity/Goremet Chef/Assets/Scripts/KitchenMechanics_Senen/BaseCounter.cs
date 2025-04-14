@@ -10,11 +10,8 @@ public class BaseCounter : MonoBehaviour {
     
     public Transform countTopPoint;
     private GameObject thingOnCounter;
-
-    public Transform getCountTopPoint() {
-        return countTopPoint;
-    }
     
+    // gives the specific counter the object that is passed in and owns it
     public void setThingOnCounter(GameObject ingredient) {
         if (ingredient == null) {
             Debug.Log("Nothing in your inventory");
@@ -22,7 +19,7 @@ public class BaseCounter : MonoBehaviour {
         }
 
         if (hasObjectOnCounter()) {
-            Debug.Log("Something is already on your the counter "+ thingOnCounter.name);
+            Debug.Log("Something is already on the counter "+ thingOnCounter.name);
             return;
         }
         
@@ -31,6 +28,10 @@ public class BaseCounter : MonoBehaviour {
     
     public void clearObjectOnCounter() {
         thingOnCounter = null;
+    }
+
+    public GameObject getThingOnCounter() {
+        return thingOnCounter;
     }
     
     public bool hasObjectOnCounter() {
