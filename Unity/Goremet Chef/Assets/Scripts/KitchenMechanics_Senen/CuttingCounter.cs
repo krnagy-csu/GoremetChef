@@ -1,15 +1,10 @@
 using UnityEngine;
 
 public class CuttingCounter : BaseCounter {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject[] cuttableObjects;
+    // private GameObject thingOnCounter;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
+    
 }
