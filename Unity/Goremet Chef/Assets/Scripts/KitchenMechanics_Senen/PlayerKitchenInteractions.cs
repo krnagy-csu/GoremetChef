@@ -17,38 +17,22 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
-            PickUpPlaceDown();
+            PlaceDown();
         }
-        
-
-        if (!inventoryIsEmpty()) {
-            Debug.Log("Recent item in inventory " + getMostRecentItem().gameObject.ToString());
-        }
-        
     }
-    
-    
-    private void PickUpPlaceDown() {
+
+    private void PlaceDown() {
         // sends a forward raycast to see which object it hits
         // it can hit in object but only checks for counters
-        if (Physics.Raycast(raycastOrigin.position, Vector3.forward, out RaycastHit hit, 2f)) {
-            
+        if (Physics.Raycast(raycastOrigin.position, Vector3.forward * 2, out RaycastHit hit)) {
             if (hit.collider.gameObject.CompareTag("ClearCounter")) {
                 ClearCounter clearCounter = hit.collider.gameObject.GetComponent<ClearCounter>();
-                clearCounter.Interact(this);
-                // Debug.Log("Got ClearCounter component!");
-            }
-
-            if (hit.collider.gameObject.CompareTag("PickUp")) {
-                if (!inventoryHasRoom()) {
-                    Debug.Log("Inventory full!");
-                    return;
+                if (clearCounter is not null) {
+                    // if a clear counter exists, call this function that will handle picking up
+                    // and putting down
+                    clearCounter.Interact(this);
+                    Debug.Log("Got ClearCounter component!");
                 }
-                GameObject pickUp = hit.collider.gameObject;
-                addToInventory(pickUp);
-                pickUp.SetActive(false);
-                //Hides the pick up item in the scene
-                Debug.Log(pickUp + " added to inventory");
             }
         }
     }
@@ -85,10 +69,6 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         } else {
             top--;
         }
-    }
-
-    public bool inventoryHasRoom() {
-        return top != 4;
     }
     
     public bool inventoryIsEmpty() {
