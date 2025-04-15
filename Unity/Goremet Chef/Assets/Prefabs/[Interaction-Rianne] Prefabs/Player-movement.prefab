@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 29189666749994922, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 526459342732895192, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,10 +58,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player-movement
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2090582250756487926, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2568074893044952302}
   m_SourcePrefab: {fileID: 100100000, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+--- !u!1 &1327359649523875838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+  m_PrefabInstance: {fileID: 7726333884626915836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2568074893044952302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327359649523875838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5549303aca3ed4d2bae1caca29e8b535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jump: 5
