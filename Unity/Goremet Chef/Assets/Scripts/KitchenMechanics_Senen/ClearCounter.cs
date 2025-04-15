@@ -37,10 +37,14 @@ public class ClearCounter : BaseCounter {
                 return;
             } 
             
+            // this section below handles getting things into your inventory from the counter
             player.addToInventory(getThingOnCounter());
+            // adds thing on counter into inventory
             getThingOnCounter().SetActive(false);
+            // hides things on counter
             Debug.Log(getThingOnCounter() + " added to inventory");
             clearObjectOnCounter();
+            // makes counter no longer own the object that was on it
         }
     }
 }
