@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3225634424399004060}
   - component: {fileID: 8793912666968822985}
   - component: {fileID: 5658292122814004505}
-  m_Layer: 0
+  - component: {fileID: 1221188671742327144}
+  m_Layer: 6
   m_Name: Entity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,3 +160,20 @@ MonoBehaviour:
   maxLoops: 30
   doDebugLogging: 1
   player: {fileID: 0}
+--- !u!114 &1221188671742327144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512659992858298819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b57096e547c8b34cbcb0564ee97109d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleDrops:
+  - {fileID: 4341595191252173405, guid: daf8db120f3798640aa02cd5ff96232a, type: 3}
+  - {fileID: 2383669548115723048, guid: b358cb060c648954397f7553c8c15446, type: 3}
+  - {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
+  dropOrigin: {fileID: 4355945431594660287}
