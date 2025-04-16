@@ -14,15 +14,8 @@ public class ClearCounter : BaseCounter {
                 
                 setThingOnCounter(player.getMostRecentItem());
                 // the players gives most recent item in their inventory to the counter 
-                
-                // Instantiate(getThingOnCounter(), countTopPoint.transform.position, Quaternion.identity);
-                // ^ this is for debugging if theres something in your inventory already, the game should 
-                // start you off with nothing in your inventory
-                
-                getThingOnCounter().transform.position = countTopPoint.transform.position;
-                getThingOnCounter().SetActive(true);
-                // puts the object that was given to that counter at the top point and shows it
-                
+                Instantiate(getThingOnCounter(), countTopPoint.transform.position, Quaternion.identity);
+                // spawns in the object that was given to that counter at the top point
                 player.removeFromInventory();
                 // removes item from invetory 
             } else {

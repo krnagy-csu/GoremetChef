@@ -18,7 +18,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
-            PickUpPlaceDown();
+            PlaceDown();
         }
         
         if (Input.GetKeyDown(KeyCode.Q)) {
@@ -110,10 +110,6 @@ public class PlayerKitchenInteractions : MonoBehaviour {
             inventory[top] = null;
             top--;
         }
-    }
-
-    public bool inventoryHasRoom() {
-        return top != 4;
     }
     
     public bool inventoryIsEmpty() {
