@@ -25,16 +25,32 @@ public class PlayerKitchenInteractions : MonoBehaviour {
             DropItem();
         }
         
-
         if (!inventoryIsEmpty()) {
             Debug.Log("Recent item in inventory " + getMostRecentItem().gameObject.ToString());
         }
         
     }
 
+    // if collides with an object that is PickUp-able will add it to inventory 
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("PickUp")) {
+            if (!inventoryHasRoom()) {
+                Debug.Log("Inventory full!");
+                return;
+            }
+            
+            GameObject pickUp = other.gameObject;
+            addToInventory(pickUp);
+            pickUp.SetActive(false);
+            //Hides the pick up item in the scene
+            Debug.Log(pickUp + " added to inventory");
+        }
+        
+    }
+
     private void DropItem() {
         // sends a raycast to see if it hits nothing
-        if (!Physics.Raycast(raycastOrigin.position, Vector3.forward, out RaycastHit hit, 2f)) {
+        if (!Physics.Raycast(raycastOrigin.transform.position, raycastOrigin.transform.forward, 2f)) {
             if (inventoryIsEmpty()) {
                 Debug.Log("Inventory is empty");
                 return;
@@ -51,24 +67,12 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     
     private void PickUpPlaceDown() {
         // sends a forward raycast to see which object it hits
-        if (Physics.Raycast(raycastOrigin.position, Vector3.forward, out RaycastHit hit, 2f)) {
+        if (Physics.Raycast(raycastOrigin.transform.position, raycastOrigin.transform.forward, out RaycastHit hit, 2f)) {
             
             if (hit.collider.gameObject.CompareTag("ClearCounter")) {
                 ClearCounter clearCounter = hit.collider.gameObject.GetComponent<ClearCounter>();
                 clearCounter.Interact(this);
                 // Debug.Log("Got ClearCounter component!");
-            }
-
-            if (hit.collider.gameObject.CompareTag("PickUp")) {
-                if (!inventoryHasRoom()) {
-                    Debug.Log("Inventory full!");
-                    return;
-                }
-                GameObject pickUp = hit.collider.gameObject;
-                addToInventory(pickUp);
-                pickUp.SetActive(false);
-                //Hides the pick up item in the scene
-                Debug.Log(pickUp + " added to inventory");
             }
         }
     }
