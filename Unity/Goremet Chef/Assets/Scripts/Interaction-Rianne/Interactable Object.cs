@@ -10,17 +10,27 @@ public class InteractableObject : MonoBehaviour
     //This is where the item is gonna spawn.
     public Transform dropOrigin;
     
+    //One hit kill for all enemies except loot llama right now.
+    public int health;
+    
     //ONLY USE IF WE WANT A SPECIFIC ITEM SPAWN EVERY TIME. Accompanying code is still included in the Die() method.
     // public GameObject dropPrefab;
     
     //This is when the object is hit by the player.
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        //Hit!
+        //Hit! 
         Debug.Log("Ouch! I'm " + gameObject.name);
         
-        //Killed!
-        Invoke(nameof(Die), 2f);
+        //Decrease health
+        health -= damage;
+        
+        if (health <= 0)
+        {
+           //Killed!
+           Invoke(nameof(Die), 1f); 
+        }
+        
     }
 
     //

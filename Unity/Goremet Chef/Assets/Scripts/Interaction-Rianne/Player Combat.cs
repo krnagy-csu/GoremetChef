@@ -46,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
                 //Check if the object exists
                 if (interact)
                 {
-                    interact.TakeDamage();
+                    interact.TakeDamage(damage);
                 }
             }
         }
