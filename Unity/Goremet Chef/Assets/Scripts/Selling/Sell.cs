@@ -4,14 +4,19 @@ public class Sell : MonoBehaviour
 {
     public GameObject completedFood;
     public GameObject intendedFood;
-    private int completionTime;
-    private int foodQualityScore;
-    private int finalScore;
+    public int completionTime;
+    public int foodQualityScore;
+    
+    public int finalScore;
+
+    public void sellFood()
+    {
+        finalScore = gradeFood();
+    }
     public int gradeFood() 
     {
         foodQualityScore = compareFood();
-        finalScore =foodQualityScore + rateTime(completionTime);
-        return finalScore;
+        return foodQualityScore + rateTime(completionTime);
     }
     public int compareFood() 
     {
