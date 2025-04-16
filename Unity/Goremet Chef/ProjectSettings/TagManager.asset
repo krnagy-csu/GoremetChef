@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Interactable
+  - HidingSpot
+  - ClearCounter
+  - CuttingCounter
   layers:
   - Default
   - TransparentFX
