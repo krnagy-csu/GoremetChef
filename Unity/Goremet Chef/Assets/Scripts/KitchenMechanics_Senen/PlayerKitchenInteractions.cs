@@ -103,6 +103,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         if (inventoryIsEmpty()) {
             Debug.Log("Nothing in your inventory");
         } else {
+            inventory[top] = null;
             top--;
         }
     }
