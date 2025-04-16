@@ -14,10 +14,15 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     [SerializeField] private int top = -1; 
     // stack structure IN INSPECTOR YOU CAN EDIT IT AND THATS STRICTLY FOR TESTING
     public Transform raycastOrigin;
+    public Transform dropPosition;
     
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             PickUpPlaceDown();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            DropItem();
         }
         
 
@@ -26,11 +31,26 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         }
         
     }
-    
+
+    private void DropItem() {
+        // sends a raycast to see if it hits nothing
+        if (!Physics.Raycast(raycastOrigin.position, Vector3.forward, out RaycastHit hit, 2f)) {
+            if (inventoryIsEmpty()) {
+                Debug.Log("Inventory is empty");
+                return;
+                // if nothing is in your inventory does nothing
+            }
+            
+            getMostRecentItem().transform.position = dropPosition.position;
+            getMostRecentItem().SetActive(true);
+            removeFromInventory();
+            // this drops your most recent item at your feet then removes it from your inventory
+        }
+        Debug.Log("Something is in the way");
+    }
     
     private void PickUpPlaceDown() {
         // sends a forward raycast to see which object it hits
-        // it can hit in object but only checks for counters
         if (Physics.Raycast(raycastOrigin.position, Vector3.forward, out RaycastHit hit, 2f)) {
             
             if (hit.collider.gameObject.CompareTag("ClearCounter")) {
