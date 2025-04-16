@@ -25,6 +25,18 @@ public class ClearCounter : BaseCounter {
         } else {
             Debug.Log("something on counter " + getThingOnCounter());
             // will make plating and picking up later
+            if (!player.inventoryHasRoom()) {
+                Debug.Log("Your inventory is full");
+                return;
+            } 
+            // this section below handles getting things into your inventory from the counter
+            
+            player.addToInventory(getThingOnCounter());
+            // adds thing on counter into inventory
+            getThingOnCounter().SetActive(false);
+            // hides things on counter
+            Debug.Log(getThingOnCounter() + " added to inventory");
+            clearObjectOnCounter();
         }
     }
 }

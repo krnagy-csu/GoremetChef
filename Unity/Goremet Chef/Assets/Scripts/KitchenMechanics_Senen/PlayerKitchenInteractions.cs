@@ -14,25 +14,65 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     [SerializeField] private int top = -1; 
     // stack structure IN INSPECTOR YOU CAN EDIT IT AND THATS STRICTLY FOR TESTING
     public Transform raycastOrigin;
+    public Transform dropPosition;
     
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             PlaceDown();
         }
+        
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            DropItem();
+        }
+        
+        if (!inventoryIsEmpty()) {
+            Debug.Log("Recent item in inventory " + getMostRecentItem().gameObject.ToString());
+        }
+        
     }
 
-    private void PlaceDown() {
+    // if collides with an object that is PickUp-able will add it to inventory 
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("PickUp")) {
+            if (!inventoryHasRoom()) {
+                Debug.Log("Inventory full!");
+                return;
+            }
+            
+            GameObject pickUp = other.gameObject;
+            addToInventory(pickUp);
+            pickUp.SetActive(false);
+            //Hides the pick up item in the scene
+            Debug.Log(pickUp + " added to inventory");
+        }
+        
+    }
+
+    private void DropItem() {
+        // sends a raycast to see if it hits nothing
+        if (!Physics.Raycast(raycastOrigin.transform.position, raycastOrigin.transform.forward, 2f)) {
+            if (inventoryIsEmpty()) {
+                Debug.Log("Inventory is empty");
+                return;
+                // if nothing is in your inventory does nothing
+            }
+            
+            getMostRecentItem().transform.position = dropPosition.position;
+            getMostRecentItem().SetActive(true);
+            removeFromInventory();
+            // this drops your most recent item at your feet then removes it from your inventory
+        }
+        Debug.Log("Something is in the way");
+    }
+    
+    private void PickUpPlaceDown() {
         // sends a forward raycast to see which object it hits
-        // it can hit in object but only checks for counters
-        if (Physics.Raycast(raycastOrigin.position, Vector3.forward * 2, out RaycastHit hit)) {
+        if (Physics.Raycast(raycastOrigin.transform.position, raycastOrigin.transform.forward, out RaycastHit hit, 2f)) {
+            
             if (hit.collider.gameObject.CompareTag("ClearCounter")) {
                 ClearCounter clearCounter = hit.collider.gameObject.GetComponent<ClearCounter>();
-                if (clearCounter is not null) {
-                    // if a clear counter exists, call this function that will handle picking up
-                    // and putting down
-                    clearCounter.Interact(this);
-                    Debug.Log("Got ClearCounter component!");
-                }
+                clearCounter.Interact(this);
+                // Debug.Log("Got ClearCounter component!");
             }
         }
     }
@@ -67,6 +107,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         if (inventoryIsEmpty()) {
             Debug.Log("Nothing in your inventory");
         } else {
+            inventory[top] = null;
             top--;
         }
     }
