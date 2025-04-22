@@ -33,21 +33,27 @@ public class InventoryManager : MonoBehaviour
     public void ListItems()
     {
         //Clean list before reopening inventory
-        foreach (Transform item in ItemContent)
-        {
-            Destroy(item.gameObject);
-        }
+        // foreach (Transform item in ItemContent)
+        // {
+        //     Destroy(item.gameObject);
+        // }
+        CleanList();
         
         foreach (var item in items)
         {
+            //Getting the name and icon components to update depending on the item
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            // var itemWeight = obj.transform.Find("weight").GetComponent<TMP_Text>();
+            
             var removeButton = obj.transform.Find("Remove Button").GetComponent<Button>();
             
-            itemName.text = item.itemName;
+            //Displays the item's name and weight in the inventory
+            itemName.text = item.itemName + " (" + item.weight + "lbs)";
             itemIcon.sprite = item.icon;
 
+            //If the remove toggle is active, you'll see the X button beside each icon.
             if (EnableRemove.isOn)
             {
                 removeButton.gameObject.SetActive(true);
@@ -81,6 +87,15 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Count; i++)
         {
             InventoryItems[i].AddItem(items[i]);
+        }
+    }
+
+    public void CleanList()
+    {
+        //Clean list before reopening inventory
+        foreach (Transform item in ItemContent)
+        {
+            Destroy(item.gameObject);
         }
     }
 }
