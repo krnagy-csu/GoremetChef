@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    [Header("Debug")]
+    public bool doDebugLog; //Krisztian: adding debug.log statements to see why it's not recognizing entities as hittable, making them toggleable
+
     //Script for the player smacking things around. 
 
     public float attackRange = 2f;
@@ -39,6 +42,8 @@ public class PlayerCombat : MonoBehaviour
         Debug.Log(hitColliders.ToString());
         foreach (Collider hitCollider in hitColliders)
         {
+            //Krisztian: debug.log statement to see what exactly we hit
+            Debug.Log(hitCollider.gameObject.name);
             //Shows which direction the target is in relation to player, then calculates the angle between the direction and the front of the player.
             //This is to check the attack angle and make sure the object isn't behind player
             Vector3 directionToTarget = (hitCollider.transform.position - transform.position).normalized;
