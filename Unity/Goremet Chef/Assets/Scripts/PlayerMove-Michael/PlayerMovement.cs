@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player Movement")]
     public float speed = 5f;
     public float jump = 5f;
+    [SerializeField] private float rotationSpeed = 10f;
 
     [Header("Stamina Gauges")]
     public float stamina = 50f;
@@ -62,6 +63,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (move.sqrMagnitude > 0.05f)
+        {
+            // rotates the player toward the movement direction
+            Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * rotationSpeed);
+            // slerp makes the rotation smooth and we edit it with the rotation speed
+        }
         controller.Move(move * (Time.deltaTime * speed));
 
         if (isGrounded) 

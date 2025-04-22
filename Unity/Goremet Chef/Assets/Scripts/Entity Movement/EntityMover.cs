@@ -15,12 +15,14 @@ public class EntityMover : MonoBehaviour
     public float sightRadius = 3.0f;
     public int timesToFlee = 2;
     public float secondsSpooked = 30f;
+    public float fleeSpeed = 15f;
 
     [Header("Wander Settings")]
     public bool wander = true;
     public float wanderRadius = 3.0f;
     public float minTimeToWander = 1.0f;
     public float maxTimeToWander = 10.0f;
+    public float wanderSpeed = 5f;
 
     [Header("Editor-only Settings")]
     public Color sightRadiusColor;
@@ -101,6 +103,7 @@ public class EntityMover : MonoBehaviour
     /// When called, picks a random point within wanderRadius and sets it as the AI navigation destination.
     /// </summary>
     private void Wander() {
+        agent.speed = wanderSpeed;
         float direction = Random.Range(0, 360);
         direction = Mathf.Deg2Rad * direction;
         float distance = Random.Range(0, wanderRadius);
@@ -112,6 +115,7 @@ public class EntityMover : MonoBehaviour
 
     private void Flee ()
     {
+        agent.speed = fleeSpeed;
         spooked = true;
         spookedTimer = secondsSpooked;
         bool spotChosen = false;
