@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2424395328529082987}
   - component: {fileID: 4852961814023070698}
   - component: {fileID: 4735857150802299474}
+  - component: {fileID: 1658660637941659407}
+  - component: {fileID: 2650242738514351172}
   m_Layer: 0
-  m_Name: Item Drop - Cylinder
+  m_Name: Arm
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,3 +112,29 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &1658660637941659407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383669548115723048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8026c769161ed34a99298b8cab9713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: a7d0cdee5130a2a418be5f3b8e2da824, type: 2}
+--- !u!114 &2650242738514351172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383669548115723048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9789d3353c7acdb499779d96da9c5230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: a7d0cdee5130a2a418be5f3b8e2da824, type: 2}

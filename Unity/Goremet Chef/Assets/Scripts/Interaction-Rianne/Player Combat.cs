@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
 
     //Every item the player can hit will go on a "Hittable" layer.
     public LayerMask hittableLayer;
+    public LayerMask pickableLayer;
 
     // Update is called once per frame
     void Update()
@@ -27,6 +28,11 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     PickUp();
+        // }
     }
 
     void Attack()
@@ -56,6 +62,27 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
+
+    // void PickUp()
+    // {
+    //     Collider[] hitColliders = Physics.OverlapSphere(attackOrigin.position, attackRange, pickableLayer);
+    //     foreach (Collider hitCollider in hitColliders)
+    //     {
+    //         //Shows which direction the target is in relation to player, then calculates the angle between the direction and the front of the player.
+    //         //This is to check the attack angle and make sure the object isn't behind player
+    //         Vector3 directionToTarget = (hitCollider.transform.position - transform.position).normalized;
+    //         float angle = Vector3.Angle(attackOrigin.forward, directionToTarget);
+    //
+    //         //Checks if object is in front of the player and that they can't hit something behind them
+    //         if (angle <= attackAngle / 2f)
+    //         {
+    //             Debug.Log("Picked up: " + hitCollider.name);
+    //             Item item = hitCollider.GetComponent<Item>();
+    //             InventoryManager.Instance.Add(item);
+    //             Destroy(item);
+    //         }
+    //     }
+    // }
 
     //Debug only. See the overlapshere of the attack range.
     void OnDrawGizmos()
