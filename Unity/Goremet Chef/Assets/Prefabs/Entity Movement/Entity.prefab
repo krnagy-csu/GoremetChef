@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3225634424399004060}
   - component: {fileID: 8793912666968822985}
   - component: {fileID: 5658292122814004505}
-  m_Layer: 0
+  - component: {fileID: 1221188671742327144}
+  m_Layer: 6
   m_Name: Entity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 1, z: 13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -122,7 +123,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -146,14 +147,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17268d2456b65045b19b1ec72b8f22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRadius: 7
+  sightRadius: 15
   timesToFlee: 2
   secondsSpooked: 30
+  fleeSpeed: 15
   wander: 1
-  wanderRadius: 15
+  wanderRadius: 25
   minTimeToWander: 4
   maxTimeToWander: 16
+  wanderSpeed: 5
   sightRadiusColor: {r: 1, g: 0, b: 1, a: 0.42352942}
   maxLoops: 30
   doDebugLogging: 1
   player: {fileID: 0}
+--- !u!114 &1221188671742327144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512659992858298819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b57096e547c8b34cbcb0564ee97109d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleDrops:
+  - {fileID: 4341595191252173405, guid: daf8db120f3798640aa02cd5ff96232a, type: 3}
+  - {fileID: 2383669548115723048, guid: b358cb060c648954397f7553c8c15446, type: 3}
+  - {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
+  dropOrigin: {fileID: 4355945431594660287}
