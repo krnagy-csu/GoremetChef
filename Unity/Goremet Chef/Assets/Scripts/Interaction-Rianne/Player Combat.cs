@@ -81,6 +81,9 @@ public class PlayerCombat : MonoBehaviour
             {
                 Debug.Log("Picked up: " + hitCollider.name);
                 Item item = hitCollider.GetComponent<ItemController>().item;
+                
+                //This is where I'm gonna have to check weight I think. 
+                
                 InventoryManager.Instance.Add(item);
                 Destroy(hitCollider.gameObject);
 
