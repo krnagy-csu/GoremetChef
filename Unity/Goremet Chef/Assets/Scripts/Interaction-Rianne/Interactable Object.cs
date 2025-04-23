@@ -19,9 +19,9 @@ public class InteractableObject : MonoBehaviour
     // public GameObject dropPrefab;
     
     //This is when the object is hit by the player.
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        //Hit!
+        //Hit! 
         Debug.Log("Ouch! I'm " + gameObject.name);
 
         if (isLootLlama)
