@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4608852359678868515}
   - component: {fileID: 7704887717733443731}
   - component: {fileID: 6983967072729130399}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Noggin
   m_TagString: PickUp
   m_Icon: {fileID: 0}

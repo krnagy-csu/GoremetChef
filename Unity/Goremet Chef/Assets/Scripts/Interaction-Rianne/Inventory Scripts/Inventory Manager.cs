@@ -15,6 +15,11 @@ public class InventoryManager : MonoBehaviour
     public Toggle EnableRemove;
     
     public InventoryItemController [] InventoryItems;
+
+    //How much the inventory weighs and the limit you can carry, public so they can be checked from player? Who knows.
+    public int inventoryWeight;
+    public int inventoryLimit = 15; //This can be changed, just temp
+    
     private void Awake()
     {
         Instance = this;
@@ -23,20 +28,30 @@ public class InventoryManager : MonoBehaviour
     public void Add(Item item)
     {
         items.Add(item);
+        inventoryWeight += item.weight;
+        Debug.Log("Weight: " + inventoryWeight);
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
+        inventoryWeight -= item.weight;
+        Debug.Log("Weight: " + inventoryWeight);
+    }
+    
+    public int GetWeightLimit()
+    {
+        return inventoryLimit;
+    }
+
+    public int GetCurrentWeight()
+    {
+        return inventoryWeight;
     }
 
     public void ListItems()
     {
         //Clean list before reopening inventory
-        // foreach (Transform item in ItemContent)
-        // {
-        //     Destroy(item.gameObject);
-        // }
         CleanList();
         
         foreach (var item in items)
@@ -45,7 +60,6 @@ public class InventoryManager : MonoBehaviour
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-            // var itemWeight = obj.transform.Find("weight").GetComponent<TMP_Text>();
             
             var removeButton = obj.transform.Find("Remove Button").GetComponent<Button>();
             
