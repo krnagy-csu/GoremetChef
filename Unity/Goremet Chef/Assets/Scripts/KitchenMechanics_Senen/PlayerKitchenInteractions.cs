@@ -74,6 +74,13 @@ public class PlayerKitchenInteractions : MonoBehaviour {
                 clearCounter.Interact(this);
                 // Debug.Log("Got ClearCounter component!");
             }
+            
+            if (hit.collider.gameObject.CompareTag("PlateCounter")) {
+                PlateCounter plateCounter = hit.collider.gameObject.GetComponent<PlateCounter>();
+                plateCounter.Interact(this);
+                Debug.Log("Got plateCounter component!");
+            }
+            
         }
     }
     
