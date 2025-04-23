@@ -118,5 +118,5 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     
     public bool inventoryIsEmpty() {
         return top == -1;
-    }
+    }   
 }
