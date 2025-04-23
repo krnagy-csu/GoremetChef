@@ -109,4 +109,15 @@ public class PlayerMovement : MonoBehaviour
         move.y = verticalVelocity;
         controller.Move(move * (jump * Time.deltaTime));
     }
+
+    //Power ups by Rianne. Not sure the best way to implement this, will work with Michael on it.
+    public void SpeedBoost(int value)
+    {
+        Debug.Log("SPEED INCREASE: " + value);
+    }
+
+    public void StealthBoost(int value)
+    {
+        Debug.Log("STEALTH INCREASE: " + value);
+    }
 }
