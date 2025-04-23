@@ -31,7 +31,7 @@ public class InteractableObject : MonoBehaviour
         else
         {
             //Killed!
-            Invoke(nameof(Die), 2f);
+            Invoke(nameof(Die), 1f);
         }
         
         
