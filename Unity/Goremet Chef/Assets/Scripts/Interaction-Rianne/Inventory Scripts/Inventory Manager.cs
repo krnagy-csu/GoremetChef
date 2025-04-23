@@ -28,20 +28,30 @@ public class InventoryManager : MonoBehaviour
     public void Add(Item item)
     {
         items.Add(item);
+        inventoryWeight += item.weight;
+        Debug.Log("Weight: " + inventoryWeight);
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
+        inventoryWeight -= item.weight;
+        Debug.Log("Weight: " + inventoryWeight);
+    }
+    
+    public int GetWeightLimit()
+    {
+        return inventoryLimit;
+    }
+
+    public int GetCurrentWeight()
+    {
+        return inventoryWeight;
     }
 
     public void ListItems()
     {
         //Clean list before reopening inventory
-        // foreach (Transform item in ItemContent)
-        // {
-        //     Destroy(item.gameObject);
-        // }
         CleanList();
         
         foreach (var item in items)
