@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     
     private CharacterController controller;
     private bool isGrounded;
-    private bool isCrouched = false;
 
     [Header("Player Movement")]
     public float speed = 5f;
@@ -17,20 +16,13 @@ public class PlayerMovement : MonoBehaviour
     [Header("Stamina Gauges")]
     public float stamina = 50f;
     public float currentstam;
+    private float gravity = -9.8f;
+    private float groundGravity = -0.05f;
+    private float verticalVelocity = 0f;
     private float stamDrain = 25f;
     private float stamRegen = 10f;
     private float RegenDelay = 4f;
     private float RegenTimer = 0f;
-
-    // Gravity variables
-    private float gravity = -9.8f;
-    private float groundGravity = -0.05f;
-    private float verticalVelocity = 0f;
-
-    // Crouch variables
-    public float standHeight = 2f;
-    public float crouchHeight = 1f;
-
 
     void Start()
     {
@@ -42,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = controller.isGrounded;
 
-        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && !isCrouched)
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             if (currentstam > 0f)
             {
@@ -70,16 +62,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Q) && !(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) 
-        {
-            isCrouched = true;
-            speed = speed / 5;
-        }
-        else 
-        {
-            isCrouched = false;
-        }
-
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         if (move.sqrMagnitude > 0.05f)
         {
@@ -90,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         }
         controller.Move(move * (Time.deltaTime * speed));
 
-        if (isGrounded && !isCrouched) 
+        if (isGrounded) 
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
