@@ -19,6 +19,7 @@ public class InventoryManager : MonoBehaviour
     //How much the inventory weighs and the limit you can carry, public so they can be checked from player? Who knows.
     public int inventoryWeight;
     public int inventoryLimit = 15; //This can be changed, just temp
+    public TMP_Text weightText;
     
     private void Awake()
     {
@@ -74,6 +75,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
         SetInventoryItems();
+        // weightText.text = inventoryWeight + " / " + inventoryLimit + " lbs";
     }
 
     public void EnableItemsRemove()
@@ -102,6 +104,8 @@ public class InventoryManager : MonoBehaviour
         {
             InventoryItems[i].AddItem(items[i]);
         }
+        EnableRemove.isOn = false;
+        // weightText.text = inventoryWeight + " / " + inventoryLimit + " lbs";
     }
 
     public void CleanList()
@@ -111,5 +115,6 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+        weightText.text = inventoryWeight + " / " + inventoryLimit + " lbs";
     }
 }
