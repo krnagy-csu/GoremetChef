@@ -420,6 +420,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player-movement
       objectReference: {fileID: 0}
+    - target: {fileID: 7736832743803094614, guid: f1b7d3a9555564f398795e2a8c198615, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815759937174762020, guid: f1b7d3a9555564f398795e2a8c198615, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527140865435133675, guid: f1b7d3a9555564f398795e2a8c198615, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8527140865435133675, guid: f1b7d3a9555564f398795e2a8c198615, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
