@@ -10,8 +10,10 @@ public class InteractableObject : MonoBehaviour
     //This is where the item is gonna spawn.
     public Transform dropOrigin;
     
-    //One hit kill for all enemies except loot llama right now.
-    public int health;
+    //These are for loot llama only
+    public bool isLootLlama = false;
+    public int maxHits = 3;
+    private int currentHits;
     
     //ONLY USE IF WE WANT A SPECIFIC ITEM SPAWN EVERY TIME. Accompanying code is still included in the Die() method.
     // public GameObject dropPrefab;
@@ -21,25 +23,46 @@ public class InteractableObject : MonoBehaviour
     {
         //Hit! 
         Debug.Log("Ouch! I'm " + gameObject.name);
-        
-        //Decrease health
-        health -= damage;
-        
-        if (health <= 0)
+
+        if (isLootLlama)
         {
-           //Killed!
-           Invoke(nameof(Die), 1f); 
+            LootLlamaDamage();
+        }
+        else
+        {
+            //Killed!
+            Invoke(nameof(Die), 2f);
         }
         
+        
+    }
+
+    private void LootLlamaDamage()
+    {
+        currentHits++;
+        
+        //Drop 1 item for the hit
+        if (possibleDrops.Length > 0)
+        {
+            int index = Random.Range(0, possibleDrops.Length);
+            GameObject selectedDrop = possibleDrops[index];
+            Vector3 spawnPos = dropOrigin != null ? dropOrigin.position : transform.position;
+            Instantiate(selectedDrop, spawnPos, Quaternion.identity);
+            Debug.Log("Dropped " + selectedDrop.name);
+        }
+        
+        if (currentHits >= maxHits)
+        {
+            Die();
+        }
     }
 
     //
     private void Die()
     {
         Debug.Log(gameObject.name + " destroyed.");
-
         
-        if (possibleDrops.Length > 0)
+        if (!isLootLlama && possibleDrops.Length > 0)
         {
             //This will select an item drop randomly from an array of possible drop prefabs.
             int index = Random.Range(0, possibleDrops.Length);
