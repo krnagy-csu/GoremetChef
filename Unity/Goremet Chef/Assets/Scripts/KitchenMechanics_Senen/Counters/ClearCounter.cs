@@ -11,48 +11,61 @@ public class ClearCounter : BaseCounter
 {
     [SerializeField] private Item kitchenObjectSO;
     
-    public override void Interact(Player player) {
-        if (!HasKitchenObject()) {
-            // The counter is empty
-            if (player.HasKitchenObject()) {
-                // The player already has something
-                player.GetKitchenObject().SetKitchenObjectParent(this);
-            } else {
-                // The player doesn't have anything
-            }
-        } else {
-            // There is a KitchenObject
-            if (player.HasKitchenObject()) {
-                // The player is carrying something
-                /*if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
-                    // The player is holding a plate
-                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())) {
-                        GetKitchenObject().DestroySelf();
-                    }
-                } else {
-                    // Player is not carrying Plate but something else
-                    if (GetKitchenObject().TryGetPlate(out plateKitchenObject)) {
-                        // Counter is holding a Plate
-                        if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO())) {
-                            player.GetKitchenObject().DestroySelf();
-                        }
-                    }
-                }*/
-            } else {
-                // Player is not carrying anything
-                GetKitchenObject().SetKitchenObjectParent(player);
-            }
-        }
-    }
-
-}
-
-    /*public void Interact(PlayerKitchenInteractions player) {
+    // public override void Interact(Player player) {
+    //     if (!HasKitchenObject()) {
+    //         // The counter is empty
+    //         if (player.HasKitchenObject()) {
+    //             // The player already has something
+    //             player.GetKitchenObject().SetKitchenObjectParent(this);
+    //         } else {
+    //             // The player doesn't have anything
+    //         }
+    //     } else {
+    //         // There is a KitchenObject
+    //         if (player.HasKitchenObject()) {
+    //             // The player is carrying something
+    //             /*if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
+    //                 // The player is holding a plate
+    //                 if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())) {
+    //                     GetKitchenObject().DestroySelf();
+    //                 }
+    //             } else {
+    //                 // Player is not carrying Plate but something else
+    //                 if (GetKitchenObject().TryGetPlate(out plateKitchenObject)) {
+    //                     // Counter is holding a Plate
+    //                     if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO())) {
+    //                         player.GetKitchenObject().DestroySelf();
+    //                     }
+    //                 }
+    //             }*/
+    //         } else {
+    //             // Player is not carrying anything
+    //             GetKitchenObject().SetKitchenObjectParent(player);
+    //         }
+    //     }
+    // }
+    
+    
+    public void Interact(PlayerKitchenInteractions player) {
         if (!hasObjectOnCounter()) {
             // no object on counter
+            if (player.hasPlate()) {
+                // sets plate on counter
+                setThingOnCounter(player.playerPlate);
+                player.playerPlate.transform.position = counterTopPoint.transform.position;
+                player.playerPlate.transform.SetParent(counterTopPoint.transform);
+                player.clearPlateInHand();
+                player.changePlateInHand();
+                return;
+            }
+              
             if (!player.inventoryIsEmpty()) {
                 // player has something
 
+                if (false) {
+                    //this will set the valid ingredient on the plate
+                }
+                
                 setThingOnCounter(player.getMostRecentItem());
                 // the players gives most recent item in their inventory to the counter
 
@@ -60,7 +73,7 @@ public class ClearCounter : BaseCounter
                 // ^ this is for debugging if theres something in your inventory already, the game should
                 // start you off with nothing in your inventory
 
-                getThingOnCounter().transform.position = countTopPoint.transform.position;
+                getThingOnCounter().transform.position = counterTopPoint.transform.position;
                 getThingOnCounter().SetActive(true);
                 // puts the object that was given to that counter at the top point and shows it
 
@@ -73,12 +86,27 @@ public class ClearCounter : BaseCounter
         } else {
             Debug.Log("something on counter " + getThingOnCounter());
             // will make plating and picking up later
+            if (getThingOnCounter().CompareTag("Plate") && !player.hasPlate()) {
+                //checks if thing on counter is a plate and sets it in players hand 
+                GameObject plate = getThingOnCounter();
+                plate.transform.SetParent(player.transform);
+                player.setPlateInHand(plate);
+                player.changePlateInHand();
+                clearObjectOnCounter();
+                return;
+            }
+            
             if (!player.inventoryHasRoom()) {
                 Debug.Log("Your inventory is full");
                 return;
             }
+            
+            if (player.hasPlate()) {
+                
+                Debug.Log("Player has plate ");
+                return;
+            }
             // this section below handles getting things into your inventory from the counter
-
             player.addToInventory(getThingOnCounter());
             // adds thing on counter into inventory
             getThingOnCounter().SetActive(false);
@@ -86,4 +114,8 @@ public class ClearCounter : BaseCounter
             Debug.Log(getThingOnCounter() + " added to inventory");
             clearObjectOnCounter();
         }
-    }*/
+    }
+
+}
+
+    

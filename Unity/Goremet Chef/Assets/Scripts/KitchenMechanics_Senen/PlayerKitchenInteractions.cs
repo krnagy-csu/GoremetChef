@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 /* Senen Bagos
@@ -15,6 +16,10 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     // stack structure IN INSPECTOR YOU CAN EDIT IT AND THATS STRICTLY FOR TESTING
     public Transform raycastOrigin;
     public Transform dropPosition;
+    public Transform platePosition;
+    
+    public GameObject playerPlate;
+    public bool plateInHand = false;
     
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
@@ -125,5 +130,21 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     
     public bool inventoryIsEmpty() {
         return top == -1;
-    }   
+    }
+
+    public void setPlateInHand(GameObject plate) {
+        playerPlate = plate;
+    }
+    
+    public void changePlateInHand() {
+        plateInHand = !plateInHand;
+    }
+    
+    public bool hasPlate() {
+        return plateInHand;
+    }
+
+    public void clearPlateInHand() {
+        playerPlate = null;
+    }
 }
