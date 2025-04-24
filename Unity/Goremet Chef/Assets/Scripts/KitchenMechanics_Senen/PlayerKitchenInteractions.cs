@@ -69,11 +69,11 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         // sends a forward raycast to see which object it hits
         if (Physics.Raycast(raycastOrigin.transform.position, raycastOrigin.transform.forward, out RaycastHit hit, 2f)) {
             
-            if (hit.collider.gameObject.CompareTag("ClearCounter")) {
+            /*if (hit.collider.gameObject.CompareTag("ClearCounter")) {
                 ClearCounter clearCounter = hit.collider.gameObject.GetComponent<ClearCounter>();
                 clearCounter.Interact(this);
                 // Debug.Log("Got ClearCounter component!");
-            }
+            }*/
         }
     }
     

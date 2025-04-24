@@ -58,7 +58,7 @@ public class PlayerCombat : MonoBehaviour
                 //Check if the object exists
                 if (interact)
                 {
-                    interact.TakeDamage();
+                    interact.TakeDamage(damage);
                 }
             }
         }
@@ -81,8 +81,24 @@ public class PlayerCombat : MonoBehaviour
             {
                 Debug.Log("Picked up: " + hitCollider.name);
                 Item item = hitCollider.GetComponent<ItemController>().item;
-                InventoryManager.Instance.Add(item);
-                Destroy(hitCollider.gameObject);
+                
+                //This is where I'm gonna have to check weight I think. 
+                int currentWeight = InventoryManager.Instance.GetCurrentWeight();
+                int newWeight = currentWeight + item.weight;
+                int weightLimit = InventoryManager.Instance.GetWeightLimit();
+                
+                Debug.Log("Current weight: " + currentWeight + " New weight: " + newWeight);
+                if (newWeight > weightLimit)
+                {
+                    Debug.Log("THAT SHIT'S TOO HEAVY.");
+                }
+                else
+                {
+                   InventoryManager.Instance.Add(item);
+                   Destroy(hitCollider.gameObject); 
+                }
+                
+                
 
                 /*
                 Krisztian's cursed way of doing it that requires exposing the PickUp method in the pickUpScript
