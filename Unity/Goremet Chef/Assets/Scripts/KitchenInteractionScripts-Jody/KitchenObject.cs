@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KitchenObject : MonoBehaviour {
-
-
+public class KitchenObject : MonoBehaviour 
+{
     [SerializeField] private Item kitchenObjectSO;
-
-
+    
     private IKitchenObjectParent kitchenObjectParent;
-
-
+    
     public Item GetKitchenObjectSO() {
         return kitchenObjectSO;
     }
@@ -51,7 +48,6 @@ public class KitchenObject : MonoBehaviour {
             return false;
         }
     }*/
-
     
     public static KitchenObject SpawnKitchenObject(Item itemSO, IKitchenObjectParent kitchenObjectParent) {
         Transform kitchenObjectTransform = Instantiate(itemSO.prefab);

@@ -153,4 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981533c18f5a8e43bfc03183f3d6301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countTopPoint: {fileID: 4966788025869488200}
+  counterTopPoint: {fileID: 4966788025869488200}
+  kitchenObjectSO: {fileID: 11400000, guid: 61c8e59f95cc2c54da04c65bfa3b8a10, type: 2}

@@ -1,25 +1,51 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /* Senen Bagos
  * this class handles picking up and putting down ONLY for the clear counter
  * anything can be placed on the clear counter, plates, body parts, ingredients
  */
+
 public class ClearCounter : BaseCounter
 {
-
-    [SerializeField] private Item itemSO;
-    [SerializeField] private Transform counterTopPoint;
-
-    private Item item;
-
-    public void Interact()
-    {
-        if (item == null)
-        {
-            Transform itemTransform = Instantiate(itemSO.prefab, counterTopPoint);
-            itemTransform.localPosition = Vector3.zero;
+    [SerializeField] private Item kitchenObjectSO;
+    
+    public override void Interact(Player player) {
+        if (!HasKitchenObject()) {
+            // The counter is empty
+            if (player.HasKitchenObject()) {
+                // The player already has something
+                player.GetKitchenObject().SetKitchenObjectParent(this);
+            } else {
+                // The player doesn't have anything
+            }
+        } else {
+            /*// There is a KitchenObject
+            if (player.HasKitchenObject()) {
+                // The player is carrying something
+                if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
+                    // The player is holding a plate
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())) {
+                        GetKitchenObject().DestroySelf();
+                    }
+                } else {
+                    // Player is not carrying Plate but something else
+                    if (GetKitchenObject().TryGetPlate(out plateKitchenObject)) {
+                        // Counter is holding a Plate
+                        if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO())) {
+                            player.GetKitchenObject().DestroySelf();
+                        }
+                    }
+                }
+            } else {
+                // Player is not carrying anything
+                GetKitchenObject().SetKitchenObjectParent(player);
+            }*/
         }
     }
+
+}
 
     /*public void Interact(PlayerKitchenInteractions player) {
         if (!hasObjectOnCounter()) {
@@ -61,4 +87,3 @@ public class ClearCounter : BaseCounter
             clearObjectOnCounter();
         }
     }*/
-}

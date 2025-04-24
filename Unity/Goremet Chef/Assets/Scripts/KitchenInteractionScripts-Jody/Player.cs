@@ -3,9 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKitchenObjectParent
 {
     public static Player Instance { get; private set; }
+    
+    public event EventHandler OnPickedSomething;
+    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public class OnSelectedCounterChangedEventArgs : EventArgs {
+        public BaseCounter selectedCounter;
+    }
     
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
@@ -15,7 +21,7 @@ public class Player : MonoBehaviour
     private bool isWalking;
     private Vector3 lastInteractDir;
     private BaseCounter selectedCounter;
-    private Item item;
+    private KitchenObject kitchenObject;
     
     private void Awake() {
         if (Instance != null) {
@@ -105,23 +111,7 @@ public class Player : MonoBehaviour
             selectedCounter = selectedCounter
         });*/
     }
-}
-
-/*
-    public event EventHandler OnPickedSomething;
-    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
-    public class OnSelectedCounterChangedEventArgs : EventArgs {
-        public BaseCounter selectedCounter;
-    }
-
-    private void GameInput_OnInteractAlternateAction(object sender, EventArgs e) {
-        if (!KitchenGameManager.Instance.IsGamePlaying()) return;
-
-        if (selectedCounter != null) {
-            selectedCounter.InteractAlternate(this);
-        }
-    }
-
+    
     public Transform GetKitchenObjectFollowTransform() {
         return kitchenObjectHoldPoint;
     }
@@ -129,9 +119,9 @@ public class Player : MonoBehaviour
     public void SetKitchenObject(KitchenObject kitchenObject) {
         this.kitchenObject = kitchenObject;
 
-        if (kitchenObject != null) {
+        /*if (kitchenObject != null) {
             OnPickedSomething?.Invoke(this, EventArgs.Empty);
-        }
+        }*/
     }
 
     public KitchenObject GetKitchenObject() {
@@ -144,6 +134,17 @@ public class Player : MonoBehaviour
 
     public bool HasKitchenObject() {
         return kitchenObject != null;
+    }
+}
+
+/*
+
+    private void GameInput_OnInteractAlternateAction(object sender, EventArgs e) {
+        if (!KitchenGameManager.Instance.IsGamePlaying()) return;
+
+        if (selectedCounter != null) {
+            selectedCounter.InteractAlternate(this);
+        }
     }
 
 }*/
