@@ -61,10 +61,6 @@ public class ClearCounter : BaseCounter
               
             if (!player.inventoryIsEmpty()) {
                 // player has something
-
-                if (false) {
-                    //this will set the valid ingredient on the plate
-                }
                 
                 setThingOnCounter(player.getMostRecentItem());
                 // the players gives most recent item in their inventory to the counter
@@ -89,10 +85,20 @@ public class ClearCounter : BaseCounter
             if (getThingOnCounter().CompareTag("Plate") && !player.hasPlate()) {
                 //checks if thing on counter is a plate and sets it in players hand 
                 GameObject plate = getThingOnCounter();
+                if (!player.inventoryIsEmpty()) {
+                    plate.GetComponent<Plate>().TryAddIngridient(player.getMostRecentItem(), player);
+                    return;
+                }
+
                 plate.transform.SetParent(player.transform);
                 player.setPlateInHand(plate);
                 player.changePlateInHand();
                 clearObjectOnCounter();
+                return;
+            }
+            
+            if (player.hasPlate()) {
+                Debug.Log("Player has plate ");
                 return;
             }
             
@@ -101,11 +107,6 @@ public class ClearCounter : BaseCounter
                 return;
             }
             
-            if (player.hasPlate()) {
-                
-                Debug.Log("Player has plate ");
-                return;
-            }
             // this section below handles getting things into your inventory from the counter
             player.addToInventory(getThingOnCounter());
             // adds thing on counter into inventory

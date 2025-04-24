@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7260182403965214271}
   - component: {fileID: 1731516881358682704}
   - component: {fileID: 1557619198933164098}
+  - component: {fileID: -5003114081354142550}
   m_Layer: 7
   m_Name: Hands
   m_TagString: PickUp
@@ -108,3 +109,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5003114081354142550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7546619528919319980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bcb2a365bb050248951d65503edbd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientName: Hands
