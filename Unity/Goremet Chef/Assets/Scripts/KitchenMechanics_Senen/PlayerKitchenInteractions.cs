@@ -21,6 +21,8 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     public GameObject playerPlate;
     public bool plateInHand = false;
     
+    public event Action OnInventoryChanged;
+    
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             PickUpPlaceDown();
@@ -29,11 +31,6 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Q)) {
             DropItem();
         }
-        
-        if (!inventoryIsEmpty()) {
-            Debug.Log("Recent item in inventory " + getMostRecentItem().gameObject.ToString());
-        }
-        
     }
 
     // if collides with an object that is PickUp-able will add it to inventory 
@@ -111,6 +108,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
             Debug.Log("Inventory is full");
         } else {
             inventory[++top] = item;
+            OnInventoryChanged?.Invoke();
         }
     }
     
@@ -121,6 +119,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         } else {
             inventory[top] = null;
             top--;
+            OnInventoryChanged?.Invoke();
         }
     }
 
@@ -130,6 +129,10 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     
     public bool inventoryIsEmpty() {
         return top == -1;
+    }
+    
+    public GameObject[] getInventoryArray() {
+        return inventory;
     }
 
     public void setPlateInHand(GameObject plate) {

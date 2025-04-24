@@ -15,18 +15,12 @@ public class Plate : MonoBehaviour {
         plate = this.gameObject;
     }
 
-    public void TryAddIngridient(GameObject ingredient, PlayerKitchenInteractions player) {
+    public void TryAddIngridient(GameObject ingredient, PlayerKitchenInteractions player, bool plateOnCounter) {
         
         if(!ingredient.TryGetComponent(out Ingredient ingredientComponent)) {
             return;
         }
         string ingredientType = ingredientComponent.ingredientName;
-
-        // foreach (var existing in validIngredients) {
-        //     if (existing.GetComponent<Ingredient>().ingredientName == ingredientType) {
-        //         Debug.Log("Valid ingredient found");
-        //     }
-        // }
         
         foreach (var existing in ingredientsOnPlate) {
             if (ingredientsOnPlate.Count == 0) {
@@ -39,11 +33,12 @@ public class Plate : MonoBehaviour {
             }
         }
         
-        
         ingredientsOnPlate.Add(ingredient);
         ingredient.transform.position = topOfPlate.transform.position;
         ingredient.transform.SetParent(plate.transform);
-        ingredient.SetActive(true);
-        player.removeFromInventory();
+        if (plateOnCounter) {
+            ingredient.SetActive(true);
+            player.removeFromInventory();    
+        }
     }
 }

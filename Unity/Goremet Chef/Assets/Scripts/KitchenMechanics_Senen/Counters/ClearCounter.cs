@@ -86,7 +86,7 @@ public class ClearCounter : BaseCounter
                 //checks if thing on counter is a plate and sets it in players hand 
                 GameObject plate = getThingOnCounter();
                 if (!player.inventoryIsEmpty()) {
-                    plate.GetComponent<Plate>().TryAddIngridient(player.getMostRecentItem(), player);
+                    plate.GetComponent<Plate>().TryAddIngridient(player.getMostRecentItem(), player, true);
                     return;
                 }
 
@@ -98,7 +98,11 @@ public class ClearCounter : BaseCounter
             }
             
             if (player.hasPlate()) {
-                Debug.Log("Player has plate ");
+                // plate in hand and wants thing on counter onto plate
+                GameObject ingredient = getThingOnCounter();
+                
+                player.playerPlate.GetComponent<Plate>().TryAddIngridient(ingredient, player, false);
+                clearObjectOnCounter();
                 return;
             }
             
