@@ -16,6 +16,7 @@ public class ContainerCounter : BaseCounter {
         if (!player.HasKitchenObject()) {
             // Player is not carrying anything
             KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
+            Debug.Log("Player picked up object");
             OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
         }
     }
