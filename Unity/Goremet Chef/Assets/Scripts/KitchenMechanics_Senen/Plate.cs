@@ -18,6 +18,9 @@ public class Plate : MonoBehaviour {
     public void TryAddIngridient(GameObject ingredient, PlayerKitchenInteractions player, bool plateOnCounter) {
         
         if(!ingredient.TryGetComponent(out Ingredient ingredientComponent)) {
+            plate.transform.SetParent(player.transform);
+            player.setPlateInHand(plate);
+            player.changePlateInHand();
             return;
         }
         string ingredientType = ingredientComponent.ingredientName;
@@ -29,6 +32,9 @@ public class Plate : MonoBehaviour {
             }
             if (existing.GetComponent<Ingredient>().ingredientName == ingredientType) {
                 Debug.Log("Already have this ingredient type on plate");
+                plate.transform.SetParent(player.transform);
+                player.setPlateInHand(plate);
+                player.changePlateInHand();
                 return;
             }
         }

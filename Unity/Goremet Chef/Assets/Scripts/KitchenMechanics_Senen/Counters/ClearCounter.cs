@@ -87,6 +87,9 @@ public class ClearCounter : BaseCounter
                 GameObject plate = getThingOnCounter();
                 if (!player.inventoryIsEmpty()) {
                     plate.GetComponent<Plate>().TryAddIngridient(player.getMostRecentItem(), player, true);
+                    if (player.hasPlate()) {
+                        clearObjectOnCounter();
+                    }
                     return;
                 }
 
