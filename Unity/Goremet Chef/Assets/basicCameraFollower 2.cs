@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 
 public class basicCameraFollower : MonoBehaviour
 {
@@ -16,4 +16,3 @@ public class basicCameraFollower : MonoBehaviour
         transform.position = objectToFollow.position + offset;
     }
 }
-*/
