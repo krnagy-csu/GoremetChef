@@ -119,11 +119,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void SpeedBoost()
     {
+        //STAMINA BOOST INSTEAD
         Debug.Log("SPEED BOOST ACTIVATED");
     }
 
     public void StealthBoost()
     {
+        //THIS NEEDS TO BE CONNECTED TO PLAYERSPOTTING
         Debug.Log("STEALTH BOOST ACTIVATED");
     }
 }
