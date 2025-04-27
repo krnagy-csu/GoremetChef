@@ -21,9 +21,14 @@ public class InventoryManager : MonoBehaviour
     public int inventoryLimit = 15; //This can be changed, just temp
     public TMP_Text weightText;
     
+    //Playermovement script so I can call the boosts
+    public GameObject player;
+    private PlayerMovement playerMovement;
+    
     private void Awake()
     {
         Instance = this;
+        playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     public void Add(Item item)
@@ -35,6 +40,22 @@ public class InventoryManager : MonoBehaviour
 
     public void Remove(Item item)
     {
+        //Trying buff here?//
+        switch (item.itemType)
+        {
+            case Item.ItemType.StrengthBuff:
+                playerMovement.StrengthBoost();
+                break;
+            case Item.ItemType.SpeedBuff:
+                playerMovement.SpeedBoost();
+                break;
+            case Item.ItemType.StealthBuff:
+                playerMovement.StealthBoost();
+                break;
+        }
+        /////////////////////
+        
+        //After buff is called, remove the item
         items.Remove(item);
         inventoryWeight -= item.weight;
         Debug.Log("Weight: " + inventoryWeight);
