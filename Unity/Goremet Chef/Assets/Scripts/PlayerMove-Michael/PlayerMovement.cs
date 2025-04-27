@@ -122,11 +122,6 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("SPEED BOOST ACTIVATED");
     }
 
-    public void StrengthBoost()
-    {
-        Debug.Log("STRENGTH BOOST ACTIVATED");
-    }
-
     public void StealthBoost()
     {
         Debug.Log("STEALTH BOOST ACTIVATED");

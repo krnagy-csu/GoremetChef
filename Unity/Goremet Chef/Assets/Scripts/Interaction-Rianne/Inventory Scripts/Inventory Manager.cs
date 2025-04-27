@@ -21,14 +21,16 @@ public class InventoryManager : MonoBehaviour
     public int inventoryLimit = 15; //This can be changed, just temp
     public TMP_Text weightText;
     
-    //Playermovement script so I can call the boosts
+    //Playermovement and playercombat script so I can call the boosts
     public GameObject player;
     private PlayerMovement playerMovement;
+    private PlayerCombat playerCombat;
     
     private void Awake()
     {
         Instance = this;
         playerMovement = player.GetComponent<PlayerMovement>();
+        playerCombat = player.GetComponent<PlayerCombat>();
     }
 
     public void Add(Item item)
@@ -44,7 +46,7 @@ public class InventoryManager : MonoBehaviour
         switch (item.itemType)
         {
             case Item.ItemType.StrengthBuff:
-                playerMovement.StrengthBoost();
+                playerCombat.StrengthBoost();
                 break;
             case Item.ItemType.SpeedBuff:
                 playerMovement.SpeedBoost();
