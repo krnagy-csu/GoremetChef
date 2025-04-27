@@ -12,7 +12,7 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
     public static event EventHandler OnAnyObjectPlacedHere;
 
     public Transform counterTopPoint;
-    private GameObject thingOnCounter;
+    public GameObject thingOnCounter;
     
     private KitchenObject kitchenObject;
     
