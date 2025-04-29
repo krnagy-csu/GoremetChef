@@ -9,12 +9,13 @@ public class Item : ScriptableObject
     public string itemName;
     public int weight;
     public Sprite icon;
+    public Transform prefab;
     public ItemType itemType;
 
     public enum ItemType
     {
+        StrengthBuff,
         SpeedBuff,
-        StealthBuff,
-        StrengthBuff
+        StealthBuff
     }
 }

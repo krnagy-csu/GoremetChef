@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     // simple character controller created by Rianne used as base (given permission)
     
     private CharacterController controller;
+    private PlayerSpotting playerSpotting;
     private bool isGrounded;
     private bool isCrouched = false;
 
@@ -35,13 +36,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        playerSpotting = GetComponent<PlayerSpotting>();
         currentstam = stamina;
     }
 
     void Update()
     {
         isGrounded = controller.isGrounded;
-
+        playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity());
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && !isCrouched)
         {
             if (currentstam > 0f)
@@ -52,7 +54,11 @@ public class PlayerMovement : MonoBehaviour
                 RegenTimer = 0f;
                 if (currentstam == 0f)
                 {
-                    speed = 5f;           
+                    speed = 5f;
+                }
+                else
+                {
+                    playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() * 1.5f);
                 }
             }
         }
@@ -74,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isCrouched = true;
             speed = speed / 5;
+            playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2);
         }
         else 
         {
@@ -110,14 +117,15 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * (jump * Time.deltaTime));
     }
 
-    //Power ups by Rianne. Not sure the best way to implement this, will work with Michael on it.
-    public void SpeedBoost(int value)
+    public void SpeedBoost()
     {
-        Debug.Log("SPEED INCREASE: " + value);
+        //STAMINA BOOST INSTEAD
+        Debug.Log("SPEED BOOST ACTIVATED");
     }
 
-    public void StealthBoost(int value)
+    public void StealthBoost()
     {
-        Debug.Log("STEALTH INCREASE: " + value);
+        //THIS NEEDS TO BE CONNECTED TO PLAYERSPOTTING
+        Debug.Log("STEALTH BOOST ACTIVATED");
     }
 }

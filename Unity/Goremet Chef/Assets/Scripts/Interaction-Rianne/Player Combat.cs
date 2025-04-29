@@ -87,7 +87,6 @@ public class PlayerCombat : MonoBehaviour
                 int newWeight = currentWeight + item.weight;
                 int weightLimit = InventoryManager.Instance.GetWeightLimit();
                 
-                Debug.Log("Current weight: " + currentWeight + " New weight: " + newWeight);
                 if (newWeight > weightLimit)
                 {
                     Debug.Log("THAT SHIT'S TOO HEAVY.");
@@ -111,6 +110,11 @@ public class PlayerCombat : MonoBehaviour
                 }*/
             }
         }
+    }
+    
+    public void StrengthBoost()
+    {
+        Debug.Log("STRENGTH BOOST ACTIVATED");
     }
 
     public void StrengthBoost(int value)
