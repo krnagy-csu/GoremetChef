@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -31,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
     // Crouch variables
     public float standHeight = 2f;
     public float crouchHeight = 1f;
+    
+    //Stealth variables
+    public bool isStealthBoosted;
+    public float stealthDuration = 8f;
 
 
     void Start()
@@ -80,7 +85,17 @@ public class PlayerMovement : MonoBehaviour
         {
             isCrouched = true;
             speed = speed / 5;
-            playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2);
+
+            //Check if the player has the stealth boost active to make range smaller
+            if (isStealthBoosted)
+            {
+                playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2.5f); //This makes it 3.2. Want it smaller? Bigger?
+            }
+            else //Otherwise, make it the normal amount.
+            {
+                playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2);
+            }
+            
         }
         else 
         {
@@ -127,5 +142,19 @@ public class PlayerMovement : MonoBehaviour
     {
         //THIS NEEDS TO BE CONNECTED TO PLAYERSPOTTING
         Debug.Log("STEALTH BOOST ACTIVATED");
+        StartCoroutine(StealthActivated());
+    }
+
+    private IEnumerator StealthActivated()
+    {
+        isStealthBoosted = true;
+        Debug.Log("isStealthBoosted: true");
+        // float originalRange = playerSpotting.GetBaseVisiblity();
+        
+        yield return new WaitForSeconds(stealthDuration);
+        
+        isStealthBoosted = false;
+        Debug.Log("isStealthBoosted: false");
+        
     }
 }

@@ -143,6 +143,23 @@ MonoBehaviour:
   currentstam: 0
   standHeight: 2
   crouchHeight: 1
+  isStealthBoosted: 0
+  stealthDuration: 5
+--- !u!114 &219990961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219990952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089046026e6431e40a31e69b3786ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 219990960}
+  visibility: 8
+  baseVisibility: 8
 --- !u!1001 &282668640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -434,6 +451,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 219990960}
+    - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 219990961}
   m_SourcePrefab: {fileID: 100100000, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
 --- !u!1001 &1917776153350690712
 PrefabInstance:
@@ -450,11 +470,11 @@ PrefabInstance:
     - target: {fileID: 127150383138542776, guid: c78057467c5584d42987765008f4cc19, type: 3}
       propertyPath: playerCombat
       value: 
-      objectReference: {fileID: 1253934181}
+      objectReference: {fileID: 0}
     - target: {fileID: 127150383138542776, guid: c78057467c5584d42987765008f4cc19, type: 3}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 1253934188}
+      objectReference: {fileID: 0}
     - target: {fileID: 162150777596617380, guid: c78057467c5584d42987765008f4cc19, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

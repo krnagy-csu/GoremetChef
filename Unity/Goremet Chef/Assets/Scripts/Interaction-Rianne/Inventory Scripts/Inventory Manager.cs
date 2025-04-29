@@ -37,7 +37,6 @@ public class InventoryManager : MonoBehaviour
     {
         items.Add(item);
         inventoryWeight += item.weight;
-        Debug.Log("Weight: " + inventoryWeight);
     }
 
     public void Remove(Item item)
@@ -60,7 +59,6 @@ public class InventoryManager : MonoBehaviour
         //After buff is called, remove the item
         items.Remove(item);
         inventoryWeight -= item.weight;
-        Debug.Log("Weight: " + inventoryWeight);
     }
     
     public int GetWeightLimit()
