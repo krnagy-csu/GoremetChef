@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -33,9 +34,14 @@ public class PlayerMovement : MonoBehaviour
     public float standHeight = 2f;
     public float crouchHeight = 1f;
     
-    //Stealth variables
+    //Stealth boost variables
     public bool isStealthBoosted;
     public float stealthDuration = 8f;
+    
+    //Stamina boost variables
+    public bool isStaminaBoosted;
+    public float boostedMaxStamina = 100f;
+    public float staminaBoostDuration = 8f;
 
 
     void Start()
@@ -91,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2.5f); //This makes it 3.2. Want it smaller? Bigger?
             }
-            else //Otherwise, make it the normal amount.
+            else //Otherwise, make it the normal crouch range
             {
                 playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2);
             }
@@ -132,17 +138,41 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * (jump * Time.deltaTime));
     }
 
-    public void SpeedBoost()
+    public void StaminaBoost()
     {
-        //STAMINA BOOST INSTEAD
-        Debug.Log("SPEED BOOST ACTIVATED");
+        Debug.Log("STAMINA BOOST ACTIVATED");
+        if (!isStaminaBoosted)
+        {
+            StartCoroutine(StaminaBoostCoroutine());
+        }
+    }
+
+    private IEnumerator StaminaBoostCoroutine()
+    {
+        isStaminaBoosted = true;
+        
+        //Save the original max stamina
+        float originalMaxStamina = stamina;
+        stamina = boostedMaxStamina;
+        //Fill the player's current stamina to the new maximum 
+        currentstam = stamina;
+        
+        yield return new WaitForSeconds(staminaBoostDuration);
+        
+        stamina = originalMaxStamina;
+        //Clamp current stam so if it's above the og max stamina, it won't stay above it when reverted.
+        currentstam = Mathf.Min(currentstam, stamina);
+        isStaminaBoosted = false;
     }
 
     public void StealthBoost()
     {
-        //THIS NEEDS TO BE CONNECTED TO PLAYERSPOTTING
         Debug.Log("STEALTH BOOST ACTIVATED");
-        StartCoroutine(StealthActivated());
+        if (!isStealthBoosted)
+        {
+            StartCoroutine(StealthActivated());
+        }
+        
     }
 
     private IEnumerator StealthActivated()

@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
                 playerCombat.StrengthBoost();
                 break;
             case Item.ItemType.SpeedBuff:
-                playerMovement.SpeedBoost();
+                playerMovement.StaminaBoost();
                 break;
             case Item.ItemType.StealthBuff:
                 playerMovement.StealthBoost();
