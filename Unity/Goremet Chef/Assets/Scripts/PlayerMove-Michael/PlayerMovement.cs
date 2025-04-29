@@ -95,7 +95,8 @@ public class PlayerMovement : MonoBehaviour
             //Check if the player has the stealth boost active to make range smaller
             if (isStealthBoosted)
             {
-                playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2.5f); //This makes it 3.2. Want it smaller? Bigger?
+                playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2.5f);
+                //This makes the range 3.2. Want it smaller? Bigger?
             }
             else //Otherwise, make it the normal crouch range
             {
@@ -177,9 +178,11 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator StealthActivated()
     {
+        //Right now this is ONLY affecting when crouched bc I'd have to do some fenagling and want to see how we feel abt it.
         isStealthBoosted = true;
         Debug.Log("isStealthBoosted: true");
-        // float originalRange = playerSpotting.GetBaseVisiblity();
+        float originalRange = playerSpotting.GetBaseVisiblity();
+        
         
         yield return new WaitForSeconds(stealthDuration);
         
