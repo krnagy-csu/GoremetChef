@@ -145,6 +145,9 @@ MonoBehaviour:
   crouchHeight: 1
   isStealthBoosted: 0
   stealthDuration: 5
+  isStaminaBoosted: 0
+  boostedMaxStamina: 100
+  staminaBoostDuration: 8
 --- !u!114 &219990961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +440,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8574851849357672087, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574851849357672087, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       propertyPath: pickableLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}
@@ -479,6 +486,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1060460738}
+    - target: {fileID: 600471610095818882, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173296913420677608, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873289933845145648, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_Text
+      value: DEVOUR
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035279854754836456, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812325047392670748, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812325047392670748, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812325047392670748, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812325047392670748, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812325047392670748, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812325047392670748, guid: c78057467c5584d42987765008f4cc19, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5542223182933480800, guid: c78057467c5584d42987765008f4cc19, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -568,7 +615,8 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 600471610095818882, guid: c78057467c5584d42987765008f4cc19, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c78057467c5584d42987765008f4cc19, type: 3}
