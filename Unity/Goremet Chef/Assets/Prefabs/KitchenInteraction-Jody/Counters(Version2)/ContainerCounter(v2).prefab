@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContainerCounter(v2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6803484932013310587, guid: 272d8e3d252bd724b92519fe9df40e7a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 272d8e3d252bd724b92519fe9df40e7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -78,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTopPoint: {fileID: 1419648597490124032}
+  thingOnCounter: {fileID: 0}
   kitchenObjectSO: {fileID: 11400000, guid: 61c8e59f95cc2c54da04c65bfa3b8a10, type: 2}
 --- !u!4 &1419648597490124032 stripped
 Transform:
