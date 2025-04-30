@@ -2,30 +2,52 @@ using UnityEngine;
 
 public class Sell : MonoBehaviour
 {
-    public GameObject completedFood;
-    public GameObject intendedFood;
-    public int completionTime;
-    public int foodQualityScore;
-    
-    public int finalScore;
+    public Recipe targetRecipe;
+    public GameObject finishedFoodObject;
 
-    public void sellFood()
+    public void Evaluate(Recipe tr, GameObject food) 
     {
-        finalScore = gradeFood();
+        targetRecipe = tr;
+        finishedFoodObject = food;
+        Evaluate();
     }
-    public int gradeFood() 
+
+    public void Evaluate()
     {
-        foodQualityScore = compareFood();
-        return foodQualityScore + rateTime(completionTime);
+        if (finishedFoodObject == null || targetRecipe == null) return;
+
+        FinishedFood finished = finishedFoodObject.GetComponent<FinishedFood>();
+        if (finished == null)
+        {
+            Debug.LogError("FinishedFood component not found!");
+            return;
+        }
+
+        float score = CalculateMatchScore(targetRecipe, finished);
+        Debug.Log("Recipe Match Score: " + score);
     }
-    public int compareFood() 
+
+    private float CalculateMatchScore(Recipe recipe, FinishedFood finished)
     {
-        //I dont know how but these should compare the food and return a value based on how good it is
-        return 0;
-    }
-    public int rateTime(int completionTime) 
-    {
-        //I dont know how but this should rate the time and return a value based on how good it is
-        return 0;
+        float total = 0f;
+        float matched = 0f;
+
+        // Sum total expected ingredients
+        foreach (var ingredient in recipe.ingredients)
+        {
+            total += ingredient.amount;
+
+            var match = finished.finalIngredients.Find(f => f.name == ingredient.name);
+            if (match != null)
+            {
+                float ratio = Mathf.Min(match.amount, ingredient.amount) / (float)ingredient.amount;
+                //here ratio determines how much of the right stuff they have
+                matched += ingredient.amount * ratio;
+                //ensures partial credit
+            }
+        }
+
+        return (total > 0f) ? matched / total : 0f;
     }
 }
+
