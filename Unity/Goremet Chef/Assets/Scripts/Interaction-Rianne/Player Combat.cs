@@ -116,11 +116,7 @@ public class PlayerCombat : MonoBehaviour
     {
         Debug.Log("STRENGTH BOOST ACTIVATED");
     }
-
-    public void StrengthBoost(int value)
-    {
-        Debug.Log("STRENGTH BOOST: " + value);
-    }
+    
 
     //Debug only. See the overlapshere of the attack range.
     void OnDrawGizmos()

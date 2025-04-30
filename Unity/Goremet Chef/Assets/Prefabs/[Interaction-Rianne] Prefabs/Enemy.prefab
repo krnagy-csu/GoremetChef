@@ -156,9 +156,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleDrops:
-  - {fileID: 2383669548115723048, guid: 43f94c26a616a4222b498be4af03505f, type: 3}
-  - {fileID: 4341595191252173405, guid: fd93d6645055848fe846763ff5c8a638, type: 3}
-  - {fileID: 1400928731331671673, guid: d0076cfaf190c4262b4061b148054f1e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dropOrigin: {fileID: 647217441016070199}
   isLootLlama: 0
-  maxHits: 3
+  maxHits: 2
+  maxLlamaHits: 3

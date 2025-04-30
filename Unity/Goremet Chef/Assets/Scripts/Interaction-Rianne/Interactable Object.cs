@@ -12,7 +12,8 @@ public class InteractableObject : MonoBehaviour
     
     //These are for loot llama only
     public bool isLootLlama = false;
-    public int maxHits = 3;
+    public int maxHits = 2;
+    public int maxLlamaHits = 3;
     private int currentHits;
     
     //ONLY USE IF WE WANT A SPECIFIC ITEM SPAWN EVERY TIME. Accompanying code is still included in the Die() method.
@@ -30,8 +31,12 @@ public class InteractableObject : MonoBehaviour
         }
         else
         {
-            //Killed!
-            Invoke(nameof(Die), 1f);
+            currentHits++;
+            if (currentHits >= maxHits)
+            {
+                //Killed!
+                Invoke(nameof(Die), 1f);
+            }
         }
         
         
@@ -51,7 +56,7 @@ public class InteractableObject : MonoBehaviour
             Debug.Log("Dropped " + selectedDrop.name);
         }
         
-        if (currentHits >= maxHits)
+        if (currentHits >= maxLlamaHits)
         {
             Die();
         }
