@@ -19,24 +19,46 @@ public class InventoryManager : MonoBehaviour
     //How much the inventory weighs and the limit you can carry, public so they can be checked from player? Who knows.
     public int inventoryWeight;
     public int inventoryLimit = 15; //This can be changed, just temp
+    public TMP_Text weightText;
+    
+    //Playermovement and playercombat script so I can call the boosts
+    public GameObject player;
+    private PlayerMovement playerMovement;
+    private PlayerCombat playerCombat;
     
     private void Awake()
     {
         Instance = this;
+        playerMovement = player.GetComponent<PlayerMovement>();
+        playerCombat = player.GetComponent<PlayerCombat>();
     }
 
     public void Add(Item item)
     {
         items.Add(item);
         inventoryWeight += item.weight;
-        Debug.Log("Weight: " + inventoryWeight);
     }
 
     public void Remove(Item item)
     {
+        //Trying buff here?//
+        switch (item.itemType)
+        {
+            case Item.ItemType.StrengthBuff:
+                playerCombat.StrengthBoost();
+                break;
+            case Item.ItemType.SpeedBuff:
+                playerMovement.StaminaBoost();
+                break;
+            case Item.ItemType.StealthBuff:
+                playerMovement.StealthBoost();
+                break;
+        }
+        /////////////////////
+        
+        //After buff is called, remove the item
         items.Remove(item);
         inventoryWeight -= item.weight;
-        Debug.Log("Weight: " + inventoryWeight);
     }
     
     public int GetWeightLimit()
@@ -53,6 +75,10 @@ public class InventoryManager : MonoBehaviour
     {
         //Clean list before reopening inventory
         CleanList();
+        foreach (Item item in items)
+        {
+            Debug.Log(item);
+        }
         
         foreach (var item in items)
         {
@@ -74,6 +100,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
         SetInventoryItems();
+        // weightText.text = inventoryWeight + " / " + inventoryLimit + " lbs";
     }
 
     public void EnableItemsRemove()
@@ -102,6 +129,8 @@ public class InventoryManager : MonoBehaviour
         {
             InventoryItems[i].AddItem(items[i]);
         }
+        EnableRemove.isOn = false;
+        // weightText.text = inventoryWeight + " / " + inventoryLimit + " lbs";
     }
 
     public void CleanList()
@@ -111,5 +140,7 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+        
+        weightText.SetText(GetCurrentWeight() + " / " + GetWeightLimit() + " lbs");
     }
 }
