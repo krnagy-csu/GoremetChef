@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df5b5204ba114748a43e8d65aa14c5f, type: 3}
-  m_Name: Feet
+  m_Script: {fileID: 11500000, guid: 8505e1b6145e54a4ba2d8f0f907caba3, type: 3}
+  m_Name: Hand
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 362181691526549836, guid: 6185dbbf00ee8394b97ff2914f8b773a, type: 3}
-  sprite: {fileID: 0}
-  objectName: Feet
+  id: 5
+  itemName: Hand
+  weight: 0
+  icon: {fileID: 21300000, guid: da2d04fe27b94e34ea0b624569b48a6f, type: 3}
+  prefab: {fileID: 362181691526549836, guid: 9dcc1288d004b344f93b531a93812fa1, type: 3}

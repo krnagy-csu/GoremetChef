@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Eye Scream Sunday
   ingredientList:
-  - {fileID: 7546619528919319980, guid: dff9f7e4699b1424bbdc8ca69206fdcc, type: 3}
-  - {fileID: 7546619528919319980, guid: 6185dbbf00ee8394b97ff2914f8b773a, type: 3}
+  - {fileID: 11400000, guid: 516df7c7202d7dc4ba386d679f5b4a00, type: 2}
+  - {fileID: 11400000, guid: 8a641706ffab0f540ad4e981e2c6bb1d, type: 2}

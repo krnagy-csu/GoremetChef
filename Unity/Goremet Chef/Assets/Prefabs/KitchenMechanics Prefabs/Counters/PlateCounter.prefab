@@ -120,17 +120,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlateCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+      propertyPath: m_TagString
+      value: PlateCounter
+      objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -13.922188
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.9999995
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.9840527
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -166,10 +170,86 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4710809504535922258}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6607911021201268008}
+    - targetCorrespondingSourceObject: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7185999819918898516}
   m_SourcePrefab: {fileID: 100100000, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+--- !u!4 &7787857918855708325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4966788025869488200, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+  m_PrefabInstance: {fileID: 2952554751013039853}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8525483324916320691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
   m_PrefabInstance: {fileID: 2952554751013039853}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9004240491293653112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+  m_PrefabInstance: {fileID: 2952554751013039853}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6607911021201268008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004240491293653112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd66e1a4b790aa44a929cf38f985828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterTopPoint: {fileID: 7787857918855708325}
+  thingOnCounter: {fileID: 0}
+  platePrefab: {fileID: 5548252645045341391, guid: dad0485a468376547b9e988693871494, type: 3}
+--- !u!23 &7185999819918898516
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004240491293653112}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d0d2b64604a63264b91c88380f1403a2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

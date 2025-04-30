@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b44bdd6496be2a94080a8de8bfd8bdad, type: 3}
-  m_Name: Graveyard Goulash
+  m_Name: Brain Stew
   m_EditorClassIdentifier: 
-  recipeName: Graveyard Goulash
-  ingredientList: []
+  recipeName: Brain Stew
+  ingredientList:
+  - {fileID: 11400000, guid: 8a641706ffab0f540ad4e981e2c6bb1d, type: 2}
+  - {fileID: 11400000, guid: 516df7c7202d7dc4ba386d679f5b4a00, type: 2}
+  - {fileID: 11400000, guid: 99fd19c679d031f42a9c143225f57076, type: 2}

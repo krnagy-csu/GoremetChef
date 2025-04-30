@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8505e1b6145e54a4ba2d8f0f907caba3, type: 3}
-  m_Name: Fingers
+  m_Name: Tomato
   m_EditorClassIdentifier: 
-  id: 4
-  itemName: Fingers
+  id: 12
+  itemName: Tomato
   weight: 0
-  icon: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b, type: 3}
-  prefab: {fileID: 362181691526549836, guid: 5e1b5b733cea8b64ca696d738502ba9c, type: 3}
+  icon: {fileID: 21300000, guid: 91e8fe3de9249fc44b7bdd8050062896, type: 3}
+  prefab: {fileID: 362181691526549836, guid: 72809fdcb2c803847836df267a679905, type: 3}

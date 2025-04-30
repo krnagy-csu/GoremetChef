@@ -73,7 +73,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
             
             if (hit.collider.gameObject.CompareTag("ClearCounter")) {
                 ClearCounter clearCounter = hit.collider.gameObject.GetComponent<ClearCounter>();
-                clearCounter.Interact(this);
+                //clearCounter.Interact(this);
                 // Debug.Log("Got ClearCounter component!");
             }
             

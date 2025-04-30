@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df5b5204ba114748a43e8d65aa14c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8505e1b6145e54a4ba2d8f0f907caba3, type: 3}
   m_Name: Brains
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 362181691526549836, guid: 4155bdbc871a2004482a643367de2139, type: 3}
-  sprite: {fileID: 0}
-  objectName: Brains
+  id: 6
+  itemName: Brains
+  weight: 0
+  icon: {fileID: 21300000, guid: 77b28124b8bda494381c80bd5aa42c22, type: 3}
+  prefab: {fileID: 362181691526549836, guid: 4155bdbc871a2004482a643367de2139, type: 3}

@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df5b5204ba114748a43e8d65aa14c5f, type: 3}
-  m_Name: Hands
+  m_Script: {fileID: 11500000, guid: b44bdd6496be2a94080a8de8bfd8bdad, type: 3}
+  m_Name: TomatoSoup
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 362181691526549836, guid: 9dcc1288d004b344f93b531a93812fa1, type: 3}
-  sprite: {fileID: 0}
-  objectName: Hands
+  recipeName: Tomato Soup
+  ingredientList:
+  - {fileID: 11400000, guid: c81464fa4f4084f438f30aee9995872f, type: 2}
+  - {fileID: 11400000, guid: c81464fa4f4084f438f30aee9995872f, type: 2}
