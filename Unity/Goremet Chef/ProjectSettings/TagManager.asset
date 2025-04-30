@@ -8,15 +8,16 @@ TagManager:
   - HidingSpot
   - ClearCounter
   - CuttingCounter
+  - PickUp
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Counters
   - Water
   - UI
   - Interactable
-  - 
+  - PickUp
   - 
   - 
   - 

@@ -61,7 +61,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.76, y: 0.49999952, z: 9.82}
-  m_LocalScale: {x: 5, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3692783011036422916}
@@ -154,7 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleDrops:
-  - {fileID: 4341595191252173405, guid: daf8db120f3798640aa02cd5ff96232a, type: 3}
-  - {fileID: 2383669548115723048, guid: b358cb060c648954397f7553c8c15446, type: 3}
-  - {fileID: 1400928731331671673, guid: fd0b87cb0a2c0d546ac6489733aa6b39, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dropOrigin: {fileID: 3692783011036422916}
+  isLootLlama: 0
+  maxHits: 2
+  maxLlamaHits: 3

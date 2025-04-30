@@ -12,15 +12,16 @@ public class EntityMover : MonoBehaviour
      * This has an obvious weakness 
      */
     [Header("Spook Settings")]
-    public float sightRadius = 3.0f;
     public int timesToFlee = 2;
     public float secondsSpooked = 30f;
+    public float fleeSpeed = 15f;
 
     [Header("Wander Settings")]
     public bool wander = true;
     public float wanderRadius = 3.0f;
     public float minTimeToWander = 1.0f;
     public float maxTimeToWander = 10.0f;
+    public float wanderSpeed = 5f;
 
     [Header("Editor-only Settings")]
     public Color sightRadiusColor;
@@ -36,11 +37,11 @@ public class EntityMover : MonoBehaviour
     private NavMeshAgent agent;
     private GameObject[] hidingSpots;
     private GameObject targetSpot;
+    private PlayerSpotting playSpot;
 
     private void OnDrawGizmos()
     {
         Gizmos.color = sightRadiusColor;
-        Gizmos.DrawSphere(transform.position, sightRadius);
         RaycastHit hit;
         if (player != null)
         {
@@ -60,6 +61,7 @@ public class EntityMover : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
         hidingSpots = GameObject.FindGameObjectsWithTag("HidingSpot");
+        playSpot = player.GetComponent<PlayerSpotting>();
     }
 
     private void Update()
@@ -88,7 +90,7 @@ public class EntityMover : MonoBehaviour
         }
         
         float distToPlayerSqr = (player.transform.position - gameObject.transform.position).sqrMagnitude;
-        if (distToPlayerSqr < (sightRadius * sightRadius) && targetSpot == null)
+        if (distToPlayerSqr < (playSpot.GetVisibility() * playSpot.GetVisibility()) && targetSpot == null)
         {
             if (CheckVision())
             {
@@ -101,6 +103,7 @@ public class EntityMover : MonoBehaviour
     /// When called, picks a random point within wanderRadius and sets it as the AI navigation destination.
     /// </summary>
     private void Wander() {
+        agent.speed = wanderSpeed;
         float direction = Random.Range(0, 360);
         direction = Mathf.Deg2Rad * direction;
         float distance = Random.Range(0, wanderRadius);
@@ -109,9 +112,12 @@ public class EntityMover : MonoBehaviour
         wanderTimer = Random.Range(minTimeToWander, maxTimeToWander);
     }
 
-
+    /// <summary>
+    /// When called, picks a random hiding spot (making sure that it's in a valid direction) and paths to it.
+    /// </summary>
     private void Flee ()
     {
+        agent.speed = fleeSpeed;
         spooked = true;
         spookedTimer = secondsSpooked;
         bool spotChosen = false;
