@@ -11,39 +11,39 @@ public class ClearCounter : BaseCounter
 {
     [SerializeField] private Item kitchenObjectSO;
     
-    // public override void Interact(Player player) {
-    //     if (!HasKitchenObject()) {
-    //         // The counter is empty
-    //         if (player.HasKitchenObject()) {
-    //             // The player already has something
-    //             player.GetKitchenObject().SetKitchenObjectParent(this);
-    //         } else {
-    //             // The player doesn't have anything
-    //         }
-    //     } else {
-    //         // There is a KitchenObject
-    //         if (player.HasKitchenObject()) {
-    //             // The player is carrying something
-    //             /*if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
-    //                 // The player is holding a plate
-    //                 if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())) {
-    //                     GetKitchenObject().DestroySelf();
-    //                 }
-    //             } else {
-    //                 // Player is not carrying Plate but something else
-    //                 if (GetKitchenObject().TryGetPlate(out plateKitchenObject)) {
-    //                     // Counter is holding a Plate
-    //                     if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO())) {
-    //                         player.GetKitchenObject().DestroySelf();
-    //                     }
-    //                 }
-    //             }*/
-    //         } else {
-    //             // Player is not carrying anything
-    //             GetKitchenObject().SetKitchenObjectParent(player);
-    //         }
-    //     }
-    // }
+    public override void Interact(Player player) {
+        if (!HasKitchenObject()) {
+            // The counter is empty
+            if (player.HasKitchenObject()) {
+                // The player already has something
+                player.GetKitchenObject().SetKitchenObjectParent(this);
+            } else {
+                // The player doesn't have anything
+            }
+        } else {
+            // There is a KitchenObject
+            if (player.HasKitchenObject()) {
+                // The player is carrying something
+                /*if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
+                    // The player is holding a plate
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())) {
+                        GetKitchenObject().DestroySelf();
+                    }
+                } else {
+                    // Player is not carrying Plate but something else
+                    if (GetKitchenObject().TryGetPlate(out plateKitchenObject)) {
+                        // Counter is holding a Plate
+                        if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO())) {
+                            player.GetKitchenObject().DestroySelf();
+                        }
+                    }
+                }*/
+            } else {
+                // Player is not carrying anything
+                GetKitchenObject().SetKitchenObjectParent(player);
+            }
+        }
+    }
     
     
     public void Interact(PlayerKitchenInteractions player) {
