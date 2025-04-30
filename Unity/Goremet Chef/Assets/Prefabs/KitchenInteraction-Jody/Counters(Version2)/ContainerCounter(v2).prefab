@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContainerCounter(v2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6056472756478350997, guid: 272d8e3d252bd724b92519fe9df40e7a, type: 3}
+      propertyPath: m_TagString
+      value: ContainerCounter
+      objectReference: {fileID: 0}
     - target: {fileID: 6803484932013310587, guid: 272d8e3d252bd724b92519fe9df40e7a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

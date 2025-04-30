@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 362181691526549836}
   - component: {fileID: 7260182403965214271}
   - component: {fileID: 1731516881358682704}
-  - component: {fileID: 1557619198933164098}
+  - component: {fileID: 4551932335706620683}
   m_Layer: 7
   m_Name: Eyes
   m_TagString: PickUp
@@ -87,24 +87,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1557619198933164098
-BoxCollider:
+--- !u!114 &4551932335706620683
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7546619528919319980}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4150d6073c46d46b2ffe8383cdb62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kitchenObjectSO: {fileID: 11400000, guid: 516df7c7202d7dc4ba386d679f5b4a00, type: 2}
