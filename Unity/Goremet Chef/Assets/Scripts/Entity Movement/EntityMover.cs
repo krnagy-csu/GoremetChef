@@ -12,7 +12,6 @@ public class EntityMover : MonoBehaviour
      * This has an obvious weakness 
      */
     [Header("Spook Settings")]
-    public float sightRadius = 3.0f;
     public int timesToFlee = 2;
     public float secondsSpooked = 30f;
     public float fleeSpeed = 15f;
@@ -38,11 +37,11 @@ public class EntityMover : MonoBehaviour
     private NavMeshAgent agent;
     private GameObject[] hidingSpots;
     private GameObject targetSpot;
+    private PlayerSpotting playSpot;
 
     private void OnDrawGizmos()
     {
         Gizmos.color = sightRadiusColor;
-        Gizmos.DrawSphere(transform.position, sightRadius);
         RaycastHit hit;
         if (player != null)
         {
@@ -62,6 +61,7 @@ public class EntityMover : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
         hidingSpots = GameObject.FindGameObjectsWithTag("HidingSpot");
+        playSpot = player.GetComponent<PlayerSpotting>();
     }
 
     private void Update()
@@ -90,7 +90,7 @@ public class EntityMover : MonoBehaviour
         }
         
         float distToPlayerSqr = (player.transform.position - gameObject.transform.position).sqrMagnitude;
-        if (distToPlayerSqr < (sightRadius * sightRadius) && targetSpot == null)
+        if (distToPlayerSqr < (playSpot.GetVisibility() * playSpot.GetVisibility()) && targetSpot == null)
         {
             if (CheckVision())
             {
@@ -112,7 +112,9 @@ public class EntityMover : MonoBehaviour
         wanderTimer = Random.Range(minTimeToWander, maxTimeToWander);
     }
 
-
+    /// <summary>
+    /// When called, picks a random hiding spot (making sure that it's in a valid direction) and paths to it.
+    /// </summary>
     private void Flee ()
     {
         agent.speed = fleeSpeed;
