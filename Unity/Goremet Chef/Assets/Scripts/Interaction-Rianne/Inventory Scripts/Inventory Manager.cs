@@ -75,6 +75,10 @@ public class InventoryManager : MonoBehaviour
     {
         //Clean list before reopening inventory
         CleanList();
+        foreach (Item item in items)
+        {
+            Debug.Log(item);
+        }
         
         foreach (var item in items)
         {
