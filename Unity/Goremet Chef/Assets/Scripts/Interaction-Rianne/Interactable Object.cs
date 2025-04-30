@@ -12,7 +12,7 @@ public class InteractableObject : MonoBehaviour
     
     //These are for loot llama only
     public bool isLootLlama = false;
-    public int maxHits = 2;
+    public int health = 2;
     public int maxLlamaHits = 3;
     private int currentHits;
     
@@ -31,8 +31,10 @@ public class InteractableObject : MonoBehaviour
         }
         else
         {
-            currentHits++;
-            if (currentHits >= maxHits)
+            Debug.Log("Damage: " + damage);
+            health -= damage;
+            Debug.Log("Health: " + health);
+            if (health <= 0)
             {
                 //Killed!
                 Invoke(nameof(Die), 1f);
