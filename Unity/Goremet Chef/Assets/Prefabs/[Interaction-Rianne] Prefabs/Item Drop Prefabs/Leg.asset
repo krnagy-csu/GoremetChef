@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Leg
   weight: 5
   icon: {fileID: 21300000, guid: f41908a2c0754ce499bf75814c67e5e3, type: 3}
+  prefab: {fileID: 6183830144902092800, guid: fd93d6645055848fe846763ff5c8a638, type: 3}
