@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
             // slerp makes the rotation smooth and we edit it with the rotation speed
         }
         controller.Move(move * (Time.deltaTime * speed)); 
-        anim.SetFloat("Speed", Mathf.Abs(speed / 5f));
+        anim.SetFloat("Speed", Mathf.Abs(0.5f + (speed / 10f)));
 
         if (isGrounded && !isCrouched) 
         {
