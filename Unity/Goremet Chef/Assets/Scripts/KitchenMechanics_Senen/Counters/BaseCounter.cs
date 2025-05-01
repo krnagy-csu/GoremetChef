@@ -12,12 +12,16 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
     public static event EventHandler OnAnyObjectPlacedHere;
 
     public Transform counterTopPoint;
-    private GameObject thingOnCounter;
+    public GameObject thingOnCounter;
     
     private KitchenObject kitchenObject;
     
-    public virtual void Interact(Player player) {
+    public virtual void Interact(IKitchenObjectParent player) {
         Debug.LogError("BaseCounter.Interact();");
+    }
+    
+    public virtual void AlternateInteract(IKitchenObjectParent player) {
+        Debug.LogError("BaseCounter.AlternateInteract();");
     }
     
     public Transform GetKitchenObjectFollowTransform() {
