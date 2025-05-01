@@ -121,20 +121,24 @@ PrefabInstance:
       value: PlateCounter
       objectReference: {fileID: 0}
     - target: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_TagString
       value: PlateCounter
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.922188
+      value: 24.504745
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9999995
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.9840527
+      value: 54.402077
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -177,6 +181,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7185999819918898516}
+    - targetCorrespondingSourceObject: {fileID: 6056472756478350997, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8808495915642974808}
   m_SourcePrefab: {fileID: 100100000, guid: 44a14aa113dd82b468db3f8fa1494860, type: 3}
 --- !u!4 &7787857918855708325 stripped
 Transform:
@@ -253,3 +260,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8808495915642974808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004240491293653112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c86522fdea3d6f4c86ab94e12733d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterTopPoint: {fileID: 7787857918855708325}
+  thingOnCounter: {fileID: 0}
+  plateKitchenObjectSO: {fileID: 11400000, guid: 9136eeb139fab0e4f9381b9a1ecf8423, type: 2}

@@ -39,7 +39,7 @@ public class KitchenObject : MonoBehaviour
         Destroy(gameObject);
     }
 
-    /*public bool TryGetPlate(out PlateKitchenObject plateKitchenObject) {
+    public bool TryGetPlate(out PlateKitchenObject plateKitchenObject) {
         if (this is PlateKitchenObject) {
             plateKitchenObject = this as PlateKitchenObject;
             return true;
@@ -47,7 +47,7 @@ public class KitchenObject : MonoBehaviour
             plateKitchenObject = null;
             return false;
         }
-    }*/
+    }
     
     public static KitchenObject SpawnKitchenObject(Item itemSO, IKitchenObjectParent kitchenObjectParent) {
         Transform kitchenObjectTransform = Instantiate(itemSO.prefab);

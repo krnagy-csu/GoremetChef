@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7091120915867697619}
   - component: {fileID: 569771957087929785}
   - component: {fileID: 5755098103714301663}
+  - component: {fileID: -4193571616231281020}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Plate
@@ -133,6 +134,19 @@ MonoBehaviour:
   ingredientsOnPlate: []
   topOfPlate: {fileID: 8381260187589159977}
   plate: {fileID: 5548252645045341391}
+--- !u!114 &-4193571616231281020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548252645045341391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4150d6073c46d46b2ffe8383cdb62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kitchenObjectSO: {fileID: 11400000, guid: 9136eeb139fab0e4f9381b9a1ecf8423, type: 2}
 --- !u!1 &8794351791502988110
 GameObject:
   m_ObjectHideFlags: 0
