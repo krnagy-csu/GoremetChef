@@ -6,8 +6,13 @@ public class DeliveryCounter : BaseCounter
 {
     public static DeliveryCounter Instance { get; private set; }
     
+    public Recipe targetRecipe;
     private void Awake() {
             Instance = this;
+    }
+
+    public void setCurrentRecipe(Recipe recipe) {
+        targetRecipe = recipe;
     }
     
     /*public override void Interact(Character player) {

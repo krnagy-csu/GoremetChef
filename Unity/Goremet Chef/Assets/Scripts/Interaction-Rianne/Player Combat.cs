@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -13,7 +14,12 @@ public class PlayerCombat : MonoBehaviour
     public float attackAngle = 90f; //Cone of attack angle in degrees
     
     //For if different objects have different health. I didn't add this yet for simplicity.
-    public int damage = 10;
+    public int damage = 1;
+    
+    //Strength boost variables
+    public bool isStrengthBoosted;
+    public int boostedDamage = 2;
+    public float strengthBoostDuration = 8f;
 
     //Every item the player can hit will go on a "Hittable" layer.
     public LayerMask hittableLayer;
@@ -87,7 +93,6 @@ public class PlayerCombat : MonoBehaviour
                 int newWeight = currentWeight + item.weight;
                 int weightLimit = InventoryManager.Instance.GetWeightLimit();
                 
-                Debug.Log("Current weight: " + currentWeight + " New weight: " + newWeight);
                 if (newWeight > weightLimit)
                 {
                     Debug.Log("THAT SHIT'S TOO HEAVY.");
@@ -112,6 +117,29 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
+    
+    public void StrengthBoost()
+    {
+        Debug.Log("STRENGTH BOOST ACTIVATED");
+        if (!isStrengthBoosted)
+        {
+            StartCoroutine(StrengthBoostCoroutine());
+        }
+    }
+
+    private IEnumerator StrengthBoostCoroutine()
+    {
+        isStrengthBoosted = true;
+        int originalDamage = damage;
+        damage = boostedDamage;
+        
+        yield return new WaitForSeconds(strengthBoostDuration);
+        
+        damage = originalDamage;
+        isStrengthBoosted = false;
+        Debug.Log("isStrengthBoosted: false");
+    }
+    
 
     //Debug only. See the overlapshere of the attack range.
     void OnDrawGizmos()
