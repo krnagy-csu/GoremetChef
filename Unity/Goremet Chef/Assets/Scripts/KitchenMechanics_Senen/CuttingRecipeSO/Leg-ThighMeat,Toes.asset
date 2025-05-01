@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01475d4272019a42ba79a01b6d360da, type: 3}
+  m_Name: Leg-ThighMeat,Toes
+  m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: 8b0d1074b6de144d7ba51a5756987346, type: 2}
+  output1: {fileID: 11400000, guid: 28b6523ca0a9cb24f86056169b01f885, type: 2}
+  output2: {fileID: 11400000, guid: 8adb9fd2a937b3047804f5ed17977df4, type: 2}
+  cuttingProgressMax: 3

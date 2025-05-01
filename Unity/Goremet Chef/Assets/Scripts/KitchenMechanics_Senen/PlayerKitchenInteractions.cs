@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 /* Senen Bagos
@@ -15,6 +16,12 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     // stack structure IN INSPECTOR YOU CAN EDIT IT AND THATS STRICTLY FOR TESTING
     public Transform raycastOrigin;
     public Transform dropPosition;
+    public Transform platePosition;
+    
+    public GameObject playerPlate;
+    public bool plateInHand = false;
+    
+    public event Action OnInventoryChanged;
     
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
@@ -24,11 +31,6 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Q)) {
             DropItem();
         }
-        
-        if (!inventoryIsEmpty()) {
-            Debug.Log("Recent item in inventory " + getMostRecentItem().gameObject.ToString());
-        }
-        
     }
 
     // if collides with an object that is PickUp-able will add it to inventory 
@@ -69,11 +71,18 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         // sends a forward raycast to see which object it hits
         if (Physics.Raycast(raycastOrigin.transform.position, raycastOrigin.transform.forward, out RaycastHit hit, 2f)) {
             
-            /*if (hit.collider.gameObject.CompareTag("ClearCounter")) {
+            if (hit.collider.gameObject.CompareTag("ClearCounter")) {
                 ClearCounter clearCounter = hit.collider.gameObject.GetComponent<ClearCounter>();
-                clearCounter.Interact(this);
+                //clearCounter.Interact(this);
                 // Debug.Log("Got ClearCounter component!");
-            }*/
+            }
+            
+            if (hit.collider.gameObject.CompareTag("PlateCounter")) {
+                PlateCounter plateCounter = hit.collider.gameObject.GetComponent<PlateCounter>();
+                plateCounter.Interact(this);
+                Debug.Log("Got plateCounter component!");
+            }
+            
         }
     }
     
@@ -99,6 +108,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
             Debug.Log("Inventory is full");
         } else {
             inventory[++top] = item;
+            OnInventoryChanged?.Invoke();
         }
     }
     
@@ -109,6 +119,7 @@ public class PlayerKitchenInteractions : MonoBehaviour {
         } else {
             inventory[top] = null;
             top--;
+            OnInventoryChanged?.Invoke();
         }
     }
 
@@ -118,5 +129,25 @@ public class PlayerKitchenInteractions : MonoBehaviour {
     
     public bool inventoryIsEmpty() {
         return top == -1;
+    }
+    
+    public GameObject[] getInventoryArray() {
+        return inventory;
+    }
+
+    public void setPlateInHand(GameObject plate) {
+        playerPlate = plate;
+    }
+    
+    public void changePlateInHand() {
+        plateInHand = !plateInHand;
+    }
+    
+    public bool hasPlate() {
+        return plateInHand;
+    }
+
+    public void clearPlateInHand() {
+        playerPlate = null;
     }
 }

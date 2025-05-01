@@ -9,6 +9,9 @@ TagManager:
   - ClearCounter
   - CuttingCounter
   - PickUp
+  - PlateCounter
+  - Plate
+  - ContainerCounter
   layers:
   - Default
   - TransparentFX
