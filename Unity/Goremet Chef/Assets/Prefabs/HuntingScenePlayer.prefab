@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5432795844313840052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 29189666749994922, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 526459342732895192, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.056397438
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0220413
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.6705
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2090582250756487926, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 355670753418786501}
+    - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8271696488940747601}
+    - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6447550575668558690}
+    - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2573825267909711204}
+  m_SourcePrefab: {fileID: 100100000, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+--- !u!1 &3618609468717504438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+  m_PrefabInstance: {fileID: 5432795844313840052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &355670753418786501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618609468717504438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5549303aca3ed4d2bae1caca29e8b535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jump: 5
+  rotationSpeed: 10
+  stamina: 50
+  currentstam: 0
+  standHeight: 2
+  crouchHeight: 1
+  isStealthBoosted: 0
+  stealthDuration: 8
+  isStaminaBoosted: 0
+  boostedMaxStamina: 100
+  staminaBoostDuration: 8
+--- !u!114 &8271696488940747601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618609468717504438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089046026e6431e40a31e69b3786ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  visibility: 8
+  baseVisibility: 8
+--- !u!114 &6447550575668558690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618609468717504438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c03552e5831426f82c750ece91322da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  top: -1
+  raycastOrigin: {fileID: 0}
+  dropPosition: {fileID: 0}
+  platePosition: {fileID: 0}
+  playerPlate: {fileID: 0}
+  plateInHand: 0
+--- !u!114 &2573825267909711204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618609468717504438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089046026e6431e40a31e69b3786ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 355670753418786501}
+  visibility: 8
+  baseVisibility: 8

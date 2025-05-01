@@ -34,10 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public float standHeight = 2f;
     public float crouchHeight = 1f;
     
-<<<<<<< HEAD
     // Animation variables
     private Animator anim;
-=======
     //Stealth boost variables
     public bool isStealthBoosted;
     public float stealthDuration = 8f;
@@ -46,8 +44,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isStaminaBoosted;
     public float boostedMaxStamina = 100f;
     public float staminaBoostDuration = 8f;
-
->>>>>>> main
 
     void Start()
     {
