@@ -12,13 +12,13 @@ public class PlateKitchenObject : KitchenObject {
     
     [SerializeField] private List<Item> validKitchenObjectsSOList;
     
-    private List<Item> kitchenObjectSOList;
+    public List<Item> kitchenObjectSOList;
 
     private void Awake() {
         kitchenObjectSOList = new List<Item>();
     }
 
-    public bool TryAddIngridient(Item kitchenObjectSO) {
+    public bool TryAddIngredient(Item kitchenObjectSO) {
         if (!validKitchenObjectsSOList.Contains(kitchenObjectSO)) {
             return false;
         }

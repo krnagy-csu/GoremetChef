@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7091120915867697619}
   - component: {fileID: 569771957087929785}
   - component: {fileID: 5755098103714301663}
-  - component: {fileID: -4193571616231281020}
+  - component: {fileID: 8062892100971309340}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Plate
@@ -134,7 +134,7 @@ MonoBehaviour:
   ingredientsOnPlate: []
   topOfPlate: {fileID: 8381260187589159977}
   plate: {fileID: 5548252645045341391}
---- !u!114 &-4193571616231281020
+--- !u!114 &8062892100971309340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,10 +143,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 5548252645045341391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a4150d6073c46d46b2ffe8383cdb62b, type: 3}
+  m_Script: {fileID: 11500000, guid: c4cc373206079d84aa2246102448fad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   kitchenObjectSO: {fileID: 11400000, guid: 9136eeb139fab0e4f9381b9a1ecf8423, type: 2}
+  validKitchenObjectsSOList:
+  - {fileID: 11400000, guid: 8a641706ffab0f540ad4e981e2c6bb1d, type: 2}
+  - {fileID: 11400000, guid: 516df7c7202d7dc4ba386d679f5b4a00, type: 2}
+  - {fileID: 11400000, guid: 28b6523ca0a9cb24f86056169b01f885, type: 2}
+  - {fileID: 11400000, guid: 8adb9fd2a937b3047804f5ed17977df4, type: 2}
+  - {fileID: 11400000, guid: b54c84cce2d700f43bf17681355e8a25, type: 2}
+  - {fileID: 11400000, guid: 1ded792154956304784c0906c1f21fd1, type: 2}
+  - {fileID: 11400000, guid: fccc930b6e5dabc48990d414b53880ad, type: 2}
+  - {fileID: 11400000, guid: 99fd19c679d031f42a9c143225f57076, type: 2}
+  - {fileID: 11400000, guid: c81464fa4f4084f438f30aee9995872f, type: 2}
 --- !u!1 &8794351791502988110
 GameObject:
   m_ObjectHideFlags: 0
