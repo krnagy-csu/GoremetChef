@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 362181691526549836}
   - component: {fileID: 7260182403965214271}
   - component: {fileID: 1731516881358682704}
-  - component: {fileID: -2077395456927440666}
+  - component: {fileID: -3220830811913102243}
   m_Layer: 7
-  m_Name: Potato
+  m_Name: CheeseBurnt
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2238796764414207470, guid: 643ff6b7903660b41b14b61462554d43, type: 3}
+  - {fileID: 2100000, guid: 4e029fdaee4d9ec4a9df81f29ff81d84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-2077395456927440666
+--- !u!114 &-3220830811913102243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,4 +99,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4150d6073c46d46b2ffe8383cdb62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitchenObjectSO: {fileID: 11400000, guid: 99fd19c679d031f42a9c143225f57076, type: 2}
+  kitchenObjectSO: {fileID: 11400000, guid: fccc930b6e5dabc48990d414b53880ad, type: 2}
