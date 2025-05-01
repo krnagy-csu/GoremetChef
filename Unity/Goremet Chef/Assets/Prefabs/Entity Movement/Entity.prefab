@@ -147,15 +147,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17268d2456b65045b19b1ec72b8f22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRadius: 15
   timesToFlee: 2
   secondsSpooked: 30
-  fleeSpeed: 15
+  fleeSpeed: 20
   wander: 1
   wanderRadius: 25
   minTimeToWander: 4
   maxTimeToWander: 16
-  wanderSpeed: 5
+  wanderSpeed: 6
   sightRadiusColor: {r: 1, g: 0, b: 1, a: 0.42352942}
   maxLoops: 30
   doDebugLogging: 1
@@ -178,4 +177,5 @@ MonoBehaviour:
   - {fileID: 2383669548115723048, guid: 43f94c26a616a4222b498be4af03505f, type: 3}
   dropOrigin: {fileID: 4355945431594660287}
   isLootLlama: 0
-  maxHits: 3
+  health: 2
+  maxLlamaHits: 3
