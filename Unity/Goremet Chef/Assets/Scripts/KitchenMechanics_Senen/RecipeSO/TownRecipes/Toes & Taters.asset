@@ -15,5 +15,5 @@ MonoBehaviour:
   recipeName: Toes & Taters
   ingredientList:
   - {fileID: 11400000, guid: 8adb9fd2a937b3047804f5ed17977df4, type: 2}
-  - {fileID: 11400000, guid: 99fd19c679d031f42a9c143225f57076, type: 2}
-  - {fileID: 11400000, guid: fccc930b6e5dabc48990d414b53880ad, type: 2}
+  - {fileID: 11400000, guid: f4c20c3cf19b2d24f98935f8b2dae613, type: 2}
+  - {fileID: 11400000, guid: f27faa7cce1be374bbe5259ec7b16bf7, type: 2}
