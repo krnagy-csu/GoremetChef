@@ -15,7 +15,7 @@ public class InventoryBox : BaseCounter
         storedItems.AddRange(InventoryManager.Instance.items);
     }
 
-    public override void Interact(Player player)
+    public override void Interact(IKitchenObjectParent player)
     {
         if (!player.HasKitchenObject())
         {

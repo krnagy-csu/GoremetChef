@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44bdd6496be2a94080a8de8bfd8bdad, type: 3}
-  m_Name: CheesyPotatoes
+  m_Script: {fileID: 11500000, guid: e4673f7b19a525b44907471e4be62428, type: 3}
+  m_Name: Potato-PotatoCooked
   m_EditorClassIdentifier: 
-  recipeName: Cheesy Potatoes
-  ingredientList:
-  - {fileID: 11400000, guid: f27faa7cce1be374bbe5259ec7b16bf7, type: 2}
-  - {fileID: 11400000, guid: f4c20c3cf19b2d24f98935f8b2dae613, type: 2}
+  input: {fileID: 11400000, guid: 99fd19c679d031f42a9c143225f57076, type: 2}
+  output: {fileID: 11400000, guid: f4c20c3cf19b2d24f98935f8b2dae613, type: 2}
+  cookingTimerMax: 2
