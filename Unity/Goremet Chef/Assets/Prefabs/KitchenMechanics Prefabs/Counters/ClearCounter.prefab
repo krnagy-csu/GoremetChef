@@ -154,4 +154,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTopPoint: {fileID: 4966788025869488200}
-  kitchenObjectSO: {fileID: 11400000, guid: 61c8e59f95cc2c54da04c65bfa3b8a10, type: 2}
+  thingOnCounter: {fileID: 0}
+  kitchenObjectSO: {fileID: 0}
