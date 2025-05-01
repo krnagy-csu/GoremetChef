@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: cfb9cc8db462a9d45bc4478e4817b4d4, type: 3}
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
-      objectReference: {fileID: 2100000, guid: b98dacfd6d89e9c4c8015d06493cd440, type: 2}
+      objectReference: {fileID: 2100000, guid: 357af50b0a080d84892c10ad2a7a1a56, type: 2}
     - target: {fileID: 919132149155446097, guid: cfb9cc8db462a9d45bc4478e4817b4d4, type: 3}
       propertyPath: m_Name
       value: cornerbuilding
