@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public float standHeight = 2f;
     public float crouchHeight = 1f;
     
+    // Animation variables
+    private Animator anim;
     //Stealth boost variables
     public bool isStealthBoosted;
     public float stealthDuration = 8f;
@@ -43,12 +45,12 @@ public class PlayerMovement : MonoBehaviour
     public float boostedMaxStamina = 100f;
     public float staminaBoostDuration = 8f;
 
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
         playerSpotting = GetComponent<PlayerSpotting>();
         currentstam = stamina;
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -108,16 +110,23 @@ public class PlayerMovement : MonoBehaviour
         {
             isCrouched = false;
         }
-
+        
+        //Set movement animation to false so that it stops the frame inputs stop
+        anim.SetBool("Moving",false);
+        
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        if (move.sqrMagnitude > 0.05f)
+        float walkInput = move.sqrMagnitude;
+        if (walkInput > 0.01f)
         {
+            //Set movement animation to true so it moves
+            anim.SetBool("Moving", true);
             // rotates the player toward the movement direction
             Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * rotationSpeed);
             // slerp makes the rotation smooth and we edit it with the rotation speed
         }
-        controller.Move(move * (Time.deltaTime * speed));
+        controller.Move(move * (Time.deltaTime * speed)); 
+        anim.SetFloat("Speed", Mathf.Abs(0.5f + (speed / 10f)));
 
         if (isGrounded && !isCrouched) 
         {
