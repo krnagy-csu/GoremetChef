@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1658660637941659407}
   - component: {fileID: 2650242738514351172}
   - component: {fileID: 5616436425454093101}
-  - component: {fileID: 4244193044619100986}
   m_Layer: 7
   m_Name: Arm
   m_TagString: PickUp
@@ -154,28 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kitchenObjectSO: {fileID: 11400000, guid: d7876cdd282634cb49055423c11c1303, type: 2}
---- !u!95 &4244193044619100986
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383669548115723048}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4977e15f910e79746981ff57b8a1a467, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8836744960781954813
 PrefabInstance:
   m_ObjectHideFlags: 0
