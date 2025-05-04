@@ -18,15 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.056397438
       objectReference: {fileID: 0}
     - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.0220413
       objectReference: {fileID: 0}
     - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.6705
       objectReference: {fileID: 0}
     - target: {fileID: 2120930215776106263, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68,6 +68,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2568074893044952302}
+    - targetCorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1707353825735718071}
   m_SourcePrefab: {fileID: 100100000, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
 --- !u!1 &1327359649523875838 stripped
 GameObject:
@@ -88,3 +91,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jump: 5
+  rotationSpeed: 10
+  stamina: 50
+  currentstam: 0
+  standHeight: 2
+  crouchHeight: 1
+--- !u!114 &1707353825735718071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327359649523875838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089046026e6431e40a31e69b3786ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  visibility: 8
+  baseVisibility: 8
