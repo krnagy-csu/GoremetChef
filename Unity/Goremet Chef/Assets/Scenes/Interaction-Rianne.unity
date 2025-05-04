@@ -119,6 +119,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &80953325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7088540271335984998, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
+  m_PrefabInstance: {fileID: 8896765734499355801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &80953330
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80953325}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c87546c48e7fbc4fb7ddef30a158718, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &219990952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8742271013171949058, guid: 29e1350a20836564bac47f3a1db00e83, type: 3}
@@ -630,7 +657,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1554236327067770484, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2964873
+      value: -6.296487
       objectReference: {fileID: 0}
     - target: {fileID: 1554236327067770484, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -638,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1554236327067770484, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.150247
+      value: 10.15025
       objectReference: {fileID: 0}
     - target: {fileID: 1554236327067770484, guid: 72d2d012e6e658d48a82d069970a2ff2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -774,6 +801,10 @@ PrefabInstance:
       propertyPath: InventoryItem
       value: 
       objectReference: {fileID: 302415698900951006, guid: 3a290b82c1987e340a9ec1d6e808180e, type: 3}
+    - target: {fileID: 5048475464654122576, guid: a924c1597b2f319408e610f7469071a0, type: 3}
+      propertyPath: inventoryLimit
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5222686874564778564, guid: a924c1597b2f319408e610f7469071a0, type: 3}
       propertyPath: m_Name
       value: Inventory Manager
@@ -1187,7 +1218,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7088540271335984998, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 80953330}
   m_SourcePrefab: {fileID: 100100000, guid: 2e20be24eaaaae748bb0b23fc15d3693, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
