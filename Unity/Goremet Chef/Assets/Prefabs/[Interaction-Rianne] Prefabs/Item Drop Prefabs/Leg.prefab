@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 515666093627390683}
   - component: {fileID: 4794461654618290605}
   - component: {fileID: 4052730952784780663}
+  - component: {fileID: 5816183020535444479}
   m_Layer: 7
   m_Name: Leg
   m_TagString: PickUp
@@ -93,6 +94,28 @@ CapsuleCollider:
   m_Height: 2.25
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &5816183020535444479
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341595191252173405}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4977e15f910e79746981ff57b8a1a467, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1248877710160819512
 PrefabInstance:
   m_ObjectHideFlags: 0
