@@ -658,11 +658,36 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4988983646360436895, guid: 028740ad21d61f4428c3dc87392ed433, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 84336243032913559, guid: 028740ad21d61f4428c3dc87392ed433, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 383316243}
   m_SourcePrefab: {fileID: 100100000, guid: 028740ad21d61f4428c3dc87392ed433, type: 3}
+--- !u!1 &383316242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 84336243032913559, guid: 028740ad21d61f4428c3dc87392ed433, type: 3}
+  m_PrefabInstance: {fileID: 383316241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &383316243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383316242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02196260a6f34d3c9084dd18d242206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterTopPoint: {fileID: 0}
+  thingOnCounter: {fileID: 0}
+  storedItems: []
+  kitchenObjectSO: {fileID: 0}
 --- !u!1001 &442080276
 PrefabInstance:
   m_ObjectHideFlags: 0
