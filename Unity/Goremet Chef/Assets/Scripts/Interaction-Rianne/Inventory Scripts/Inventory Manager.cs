@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     //How much the inventory weighs and the limit you can carry, public so they can be checked from player? Who knows.
     public int inventoryWeight;
-    public int inventoryLimit = 15; //This can be changed, just temp
+    public int inventoryLimit = 35; //This can be changed, just temp
     public TMP_Text weightText;
     
     //Playermovement and playercombat script so I can call the boosts
@@ -28,7 +28,15 @@ public class InventoryManager : MonoBehaviour
     
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         playerMovement = player.GetComponent<PlayerMovement>();
         playerCombat = player.GetComponent<PlayerCombat>();
     }

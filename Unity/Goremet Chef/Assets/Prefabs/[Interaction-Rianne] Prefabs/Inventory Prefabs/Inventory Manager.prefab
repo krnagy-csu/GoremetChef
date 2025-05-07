@@ -44,3 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b978383ff835a4590b165eb5d39e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
+  ItemContent: {fileID: 0}
+  InventoryItem: {fileID: 0}
+  EnableRemove: {fileID: 0}
+  InventoryItems: []
+  inventoryWeight: 0
+  inventoryLimit: 35
+  weightText: {fileID: 0}
+  player: {fileID: 0}

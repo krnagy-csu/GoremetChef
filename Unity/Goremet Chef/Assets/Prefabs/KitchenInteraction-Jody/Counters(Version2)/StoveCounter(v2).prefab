@@ -83,3 +83,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTopPoint: {fileID: 7432472301943154981}
+  thingOnCounter: {fileID: 0}
+  cookingRecipeSOArray:
+  - {fileID: 11400000, guid: f412f0098f0115a48ab608944e46246c, type: 2}
+  - {fileID: 11400000, guid: 8b36a642c42b63748923ab814493490f, type: 2}
+  - {fileID: 11400000, guid: 659e0d32e1951a14cbfc3e1c5ba916a0, type: 2}
+  - {fileID: 11400000, guid: bc0bfa0b72ae753448d133d65910d38c, type: 2}
