@@ -15,5 +15,6 @@ MonoBehaviour:
   id: 4
   itemName: Fingers
   weight: 0
-  icon: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b, type: 3}
+  icon: {fileID: 21300000, guid: 9323f382091c50b43affef8481365a72, type: 3}
   prefab: {fileID: 362181691526549836, guid: 5e1b5b733cea8b64ca696d738502ba9c, type: 3}
+  itemType: 0

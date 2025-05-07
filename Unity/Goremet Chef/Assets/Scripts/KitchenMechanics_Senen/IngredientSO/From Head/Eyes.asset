@@ -15,5 +15,6 @@ MonoBehaviour:
   id: 7
   itemName: Eyes
   weight: 0
-  icon: {fileID: 21300000, guid: c9f08c3c1ae2a364aaeaa3712540b1d4, type: 3}
+  icon: {fileID: 21300000, guid: d8051d99f7609c5458cdf4a237a4ffae, type: 3}
   prefab: {fileID: 362181691526549836, guid: dff9f7e4699b1424bbdc8ca69206fdcc, type: 3}
+  itemType: 0

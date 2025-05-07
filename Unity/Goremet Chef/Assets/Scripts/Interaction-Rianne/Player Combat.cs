@@ -72,11 +72,10 @@ public class PlayerCombat : MonoBehaviour
 
     void PickUp()
     {
-        Debug.Log("PickUp called");
         Collider[] hitColliders = Physics.OverlapSphere(attackOrigin.position, attackRange, pickableLayer);
         foreach (Collider hitCollider in hitColliders)
         {
-            Debug.Log("Checking hits");
+
             //Shows which direction the target is in relation to player, then calculates the angle between the direction and the front of the player.
             //This is to check the attack angle and make sure the object isn't behind player
             Vector3 directionToTarget = (hitCollider.transform.position - transform.position).normalized;
@@ -100,7 +99,7 @@ public class PlayerCombat : MonoBehaviour
                 else
                 {
                    InventoryManager.Instance.Add(item);
-                   Destroy(hitCollider.gameObject); 
+                   hitCollider.gameObject.SetActive(false); 
                 }
                 
                 
