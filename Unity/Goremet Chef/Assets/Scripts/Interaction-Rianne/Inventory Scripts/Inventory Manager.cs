@@ -45,6 +45,9 @@ public class InventoryManager : MonoBehaviour
     {
         items.Add(item);
         inventoryWeight += item.weight;
+
+        GetComponent<ItemPickupSound>()?.PlayPickupSound();
+
     }
 
     public void Remove(Item item)

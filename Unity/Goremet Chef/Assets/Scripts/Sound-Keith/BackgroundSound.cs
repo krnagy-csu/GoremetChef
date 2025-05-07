@@ -12,6 +12,7 @@ public class BackgroundSound : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         PlayStandardMusic();
+
     }
 
     public void PlayHunterMusic()
