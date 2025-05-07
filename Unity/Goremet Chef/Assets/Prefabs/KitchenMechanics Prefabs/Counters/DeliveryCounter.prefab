@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6803484932013310587}
   - component: {fileID: 7522889619708884132}
   - component: {fileID: 605860235292092460}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DeliveryCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
