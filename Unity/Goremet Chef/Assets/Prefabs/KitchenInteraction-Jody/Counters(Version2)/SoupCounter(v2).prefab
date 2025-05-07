@@ -60,6 +60,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -2369554893375837248}
   m_SourcePrefab: {fileID: 100100000, guid: 272d8e3d252bd724b92519fe9df40e7a, type: 3}
+--- !u!4 &3326544763363800839 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4966788025869488200, guid: 272d8e3d252bd724b92519fe9df40e7a, type: 3}
+  m_PrefabInstance: {fileID: 7694349053255051087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4524772169969332698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6056472756478350997, guid: 272d8e3d252bd724b92519fe9df40e7a, type: 3}
@@ -77,3 +82,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1b98f0e05a228488ef44dc23d821a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterTopPoint: {fileID: 3326544763363800839}
+  thingOnCounter: {fileID: 0}
+  soupRecipes:
+  - {fileID: 11400000, guid: bdcaf287f82bbd646bdcb455356a6ca0, type: 2}
+  - {fileID: 11400000, guid: 6826488e88456a04e96addf639cec1b0, type: 2}
+  - {fileID: 11400000, guid: 14c6e2362a5b50544ba1b5e3b018ace9, type: 2}
