@@ -7,11 +7,11 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 {
     public static Player Instance { get; private set; }
     
-    /*public event EventHandler OnPickedSomething;
+    public event EventHandler OnPickedSomething;
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs {
         public BaseCounter selectedCounter;
-    }*/
+    }
     
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private GameInput gameInput;

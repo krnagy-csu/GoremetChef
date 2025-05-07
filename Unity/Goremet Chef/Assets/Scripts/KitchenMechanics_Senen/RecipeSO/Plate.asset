@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8505e1b6145e54a4ba2d8f0f907caba3, type: 3}
-  m_Name: Hand
+  m_Name: Plate
   m_EditorClassIdentifier: 
-  id: 5
-  itemName: Hand
+  id: 21
+  itemName: Plate
   weight: 0
-  icon: {fileID: 21300000, guid: 69b4f0ac1ab57a84d99eebae31c9bbcf, type: 3}
-  prefab: {fileID: 362181691526549836, guid: 9dcc1288d004b344f93b531a93812fa1, type: 3}
+  icon: {fileID: 21300000, guid: 3928afb5321bb3d489bbd4ac581b29a2, type: 3}
+  prefab: {fileID: 3042900518546947556, guid: dad0485a468376547b9e988693871494, type: 3}
   itemType: 0

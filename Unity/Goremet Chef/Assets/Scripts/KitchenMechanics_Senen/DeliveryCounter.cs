@@ -15,7 +15,7 @@ public class DeliveryCounter : BaseCounter
         targetRecipe = recipe;
     }
     
-    /*public override void Interact(Character player) {
+    public override void Interact(IKitchenObjectParent player) {
         if (player.HasKitchenObject()) {
             if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
                 // only accepts plates
@@ -24,5 +24,5 @@ public class DeliveryCounter : BaseCounter
                 player.GetKitchenObject().DestroySelf();
             }
         }
-    }*/
+    }
 }
