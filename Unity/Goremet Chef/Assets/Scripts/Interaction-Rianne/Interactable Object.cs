@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -16,10 +18,28 @@ public class InteractableObject : MonoBehaviour
     public int maxLlamaHits = 3;
     private int currentHits;
     
+    //Animations
+    Animator animator;
+    
+
+    private GameObject[] myDrops;
+
     //ONLY USE IF WE WANT A SPECIFIC ITEM SPAWN EVERY TIME. Accompanying code is still included in the Die() method.
     // public GameObject dropPrefab;
-    
+
+    private void Start()
+    {
+        animator  = GetComponent<Animator>();
+    }
+
+
     //This is when the object is hit by the player.
+
+    private void Update()
+    {
+        myDrops = possibleDrops;
+    }
+
     public void TakeDamage(int damage)
     {
         //Hit! 
@@ -37,7 +57,12 @@ public class InteractableObject : MonoBehaviour
             if (health <= 0)
             {
                 //Killed!
-                Invoke(nameof(Die), 1f);
+                animator.SetTrigger("Die");
+                Invoke(nameof(Die), 2f);
+            }
+            else
+            {
+                animator.SetTrigger("Damage");
             }
         }
         
@@ -49,10 +74,10 @@ public class InteractableObject : MonoBehaviour
         currentHits++;
         
         //Drop 1 item for the hit
-        if (possibleDrops.Length > 0)
+        if (myDrops.Length > 0)
         {
-            int index = Random.Range(0, possibleDrops.Length);
-            GameObject selectedDrop = possibleDrops[index];
+            int index = Random.Range(0, myDrops.Length);
+            GameObject selectedDrop = myDrops[index];
             Vector3 spawnPos = dropOrigin != null ? dropOrigin.position : transform.position;
             Instantiate(selectedDrop, spawnPos, Quaternion.identity);
             Debug.Log("Dropped " + selectedDrop.name);
@@ -69,11 +94,11 @@ public class InteractableObject : MonoBehaviour
     {
         Debug.Log(gameObject.name + " destroyed.");
         
-        if (!isLootLlama && possibleDrops.Length > 0)
+        if (!isLootLlama && myDrops.Length > 0)
         {
             //This will select an item drop randomly from an array of possible drop prefabs.
-            int index = Random.Range(0, possibleDrops.Length);
-            GameObject selectedDrop = possibleDrops[index];
+            int index = Random.Range(0, myDrops.Length);
+            GameObject selectedDrop = myDrops[index];
             
             //This is to check if the drop origin for the item exists, and on the off-chance it doesn't, it'll just spawn at the object's origin.
             Vector3 spawnPosition = dropOrigin.position != null ? dropOrigin.position : transform.position;
