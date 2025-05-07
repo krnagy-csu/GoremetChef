@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -15,11 +17,21 @@ public class InteractableObject : MonoBehaviour
     public int health = 2;
     public int maxLlamaHits = 3;
     private int currentHits;
+    
+    //Animations
+    Animator animator;
+    
 
     private GameObject[] myDrops;
 
     //ONLY USE IF WE WANT A SPECIFIC ITEM SPAWN EVERY TIME. Accompanying code is still included in the Die() method.
     // public GameObject dropPrefab;
+
+    private void Start()
+    {
+        animator  = GetComponent<Animator>();
+    }
+
 
     //This is when the object is hit by the player.
 
@@ -45,7 +57,12 @@ public class InteractableObject : MonoBehaviour
             if (health <= 0)
             {
                 //Killed!
-                Invoke(nameof(Die), 1f);
+                animator.SetTrigger("Die");
+                Invoke(nameof(Die), 2f);
+            }
+            else
+            {
+                animator.SetTrigger("Damage");
             }
         }
         
