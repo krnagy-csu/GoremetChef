@@ -2848,26 +2848,6 @@ MonoBehaviour:
   recipeNameText: {fileID: 1572461351}
   iconContainer: {fileID: 832579775}
   iconTemplate: {fileID: 1645954929}
---- !u!1 &635921861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9004240491293653112, guid: 015ddee2183607c478a907e136686421, type: 3}
-  m_PrefabInstance: {fileID: 1946156062}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &635921867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635921861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3086509403e484ca75cdeed402dbae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counterTopPoint: {fileID: 1781484931}
-  thingOnCounter: {fileID: 0}
-  kitchenObjectSO: {fileID: 11400000, guid: 9136eeb139fab0e4f9381b9a1ecf8423, type: 2}
 --- !u!1 &638099376
 GameObject:
   m_ObjectHideFlags: 0
@@ -8334,11 +8314,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765280252}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1781484931 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7787857918855708325, guid: 015ddee2183607c478a907e136686421, type: 3}
-  m_PrefabInstance: {fileID: 1946156062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1787757344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9914,19 +9889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlateCounter
       objectReference: {fileID: 0}
-    - target: {fileID: 9004240491293653112, guid: 015ddee2183607c478a907e136686421, type: 3}
-      propertyPath: m_TagString
-      value: ContainerCounter
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6607911021201268008, guid: 015ddee2183607c478a907e136686421, type: 3}
-    - {fileID: 8808495915642974808, guid: 015ddee2183607c478a907e136686421, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9004240491293653112, guid: 015ddee2183607c478a907e136686421, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 635921867}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 015ddee2183607c478a907e136686421, type: 3}
 --- !u!1001 &1952882341
 PrefabInstance:
@@ -10558,10 +10524,6 @@ PrefabInstance:
     - target: {fileID: 6056472756478350997, guid: d3a79157100081044a3a00db529b5893, type: 3}
       propertyPath: m_Name
       value: DeliveryCounter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6056472756478350997, guid: d3a79157100081044a3a00db529b5893, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6820997460553459550, guid: d3a79157100081044a3a00db529b5893, type: 3}
       propertyPath: m_LocalPosition.x
