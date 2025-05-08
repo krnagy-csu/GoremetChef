@@ -36,14 +36,17 @@ public class PlayerMovement : MonoBehaviour
     
     // Animation variables
     [SerializeField] private Animator playerAnimator;
+    
     //Stealth boost variables
     public bool isStealthBoosted;
     public float stealthDuration = 8f;
+    public ParticleSystem stealthBoostEffect;
     
     //Stamina boost variables
     public bool isStaminaBoosted;
     public float boostedMaxStamina = 100f;
     public float staminaBoostDuration = 8f;
+    public ParticleSystem staminaBoostEffect;
 
     void Start()
     {
@@ -166,8 +169,11 @@ public class PlayerMovement : MonoBehaviour
         //Fill the player's current stamina to the new maximum 
         currentstam = stamina;
         
+        staminaBoostEffect.Play();
+        
         yield return new WaitForSeconds(staminaBoostDuration);
         
+        staminaBoostEffect.Stop();
         stamina = originalMaxStamina;
         //Clamp current stam so if it's above the og max stamina, it won't stay above it when reverted.
         currentstam = Mathf.Min(currentstam, stamina);
@@ -189,11 +195,13 @@ public class PlayerMovement : MonoBehaviour
         //Right now this is ONLY affecting when crouched bc I'd have to do some fenagling and want to see how we feel abt it.
         isStealthBoosted = true;
         Debug.Log("isStealthBoosted: true");
+        stealthBoostEffect.Play();
         float originalRange = playerSpotting.GetBaseVisiblity();
         
         
         yield return new WaitForSeconds(stealthDuration);
         
+        stealthBoostEffect.Stop();
         isStealthBoosted = false;
         Debug.Log("isStealthBoosted: false");
         

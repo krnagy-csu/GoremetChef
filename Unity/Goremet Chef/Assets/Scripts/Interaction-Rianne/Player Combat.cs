@@ -20,12 +20,15 @@ public class PlayerCombat : MonoBehaviour
     public bool isStrengthBoosted;
     public int boostedDamage = 2;
     public float strengthBoostDuration = 8f;
-
+    public ParticleSystem strengthBoostEffect;
+    
     //Every item the player can hit will go on a "Hittable" layer.
     public LayerMask hittableLayer;
     public LayerMask pickableLayer;
 
     [SerializeField] private Animator playerAnimator;
+
+    
 
 
     private void Start()
@@ -141,8 +144,12 @@ public class PlayerCombat : MonoBehaviour
         int originalDamage = damage;
         damage = boostedDamage;
         
+        //Particle effect to show player is boosted
+        strengthBoostEffect.Play();
+        
         yield return new WaitForSeconds(strengthBoostDuration);
         
+        strengthBoostEffect.Stop();
         damage = originalDamage;
         isStrengthBoosted = false;
         Debug.Log("isStrengthBoosted: false");
