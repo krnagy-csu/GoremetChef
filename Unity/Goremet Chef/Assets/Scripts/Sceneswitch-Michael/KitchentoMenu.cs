@@ -15,16 +15,21 @@ public class KitchentoMenu : MonoBehaviour
     [SerializeField] private Animator panel;
 
     private bool timesUp;
+    private bool timerEnabled = false;
+
+    [SerializeField]private int pointsToWin = 5;
 
     void Start()
     {
         deliveryManager = FindObjectOfType<DeliveryManager>();
+        timerEnabled = false;
+
     }
 
     void Update()
     {
         points = deliveryManager.GetSuccessRecipesAmount();
-        if (!timesUp)
+        if (!timesUp && timerEnabled)
         {
             timer -= Time.deltaTime;
             UpdateTimerUI();
@@ -34,11 +39,11 @@ public class KitchentoMenu : MonoBehaviour
                 timesUp = true; // Prevent multiple calls
                 timer = 0; // Clamp timer
                 timerText.enabled = false;
-                if (points >= 5)
+                if (points >= pointsToWin)
                 {
                     winText.gameObject.SetActive(true);
                 }
-                else if (points < 5)
+                else if (points < pointsToWin)
                 {
                     loseText.gameObject.SetActive(true);
                 }
@@ -70,5 +75,10 @@ public class KitchentoMenu : MonoBehaviour
     public void StartFade()
     {
         panel.SetTrigger("FadeOut");
+    }
+
+    public void StartTimer()
+    {
+        timerEnabled = true;
     }
 }
