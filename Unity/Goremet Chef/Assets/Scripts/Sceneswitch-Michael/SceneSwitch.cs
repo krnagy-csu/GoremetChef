@@ -9,10 +9,11 @@ public class SceneSwitch : MonoBehaviour
     public float timer = 10f;  
     public TMP_Text timerText;
     public TMP_Text timeUpText;
+    [SerializeField] private Animator panel;
 
     private bool timesUp;
 
-
+    
     void Update()
     {
         if (!timesUp)
@@ -42,6 +43,7 @@ public class SceneSwitch : MonoBehaviour
     
     public void LoadSceneWithDelay()
     {
+        StartFade();
         StartCoroutine(DelayThenLoad());
     }
 
@@ -49,5 +51,10 @@ public class SceneSwitch : MonoBehaviour
     {
         yield return new WaitForSeconds(3f); // Give 3 seconds to read "Time Up"
         SceneManager.LoadScene("Kitchen");
+    }
+    
+    public void StartFade()
+    {
+        panel.SetTrigger("FadeOut");
     }
 }

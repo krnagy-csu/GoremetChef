@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.AI;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -11,15 +12,17 @@ public class InteractableObject : MonoBehaviour
     public GameObject[] possibleDrops;
     //This is where the item is gonna spawn.
     public Transform dropOrigin;
-    
+
     //These are for loot llama only
     public bool isLootLlama = false;
     public int health = 2;
     public int maxLlamaHits = 3;
     private int currentHits;
-    
+
     //Animations
     Animator animator;
+
+    [SerializeField] private NavMeshAgent agent;
     
 
     private GameObject[] myDrops;
@@ -30,6 +33,7 @@ public class InteractableObject : MonoBehaviour
     private void Start()
     {
         animator  = GetComponent<Animator>();
+        
     }
 
 
@@ -59,6 +63,7 @@ public class InteractableObject : MonoBehaviour
                 //Killed!
                 animator.SetTrigger("Die");
                 Invoke(nameof(Die), 2f);
+                agent.ResetPath();
             }
             else
             {
