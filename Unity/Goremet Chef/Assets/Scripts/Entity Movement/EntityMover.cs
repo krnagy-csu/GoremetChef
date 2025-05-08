@@ -39,6 +39,8 @@ public class EntityMover : MonoBehaviour
     private GameObject targetSpot;
     private PlayerSpotting playSpot;
 
+    private Animator animator;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = sightRadiusColor;
@@ -62,16 +64,21 @@ public class EntityMover : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         hidingSpots = GameObject.FindGameObjectsWithTag("HidingSpot");
         playSpot = player.GetComponent<PlayerSpotting>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
     {
+        animator.SetBool("Walking", (agent.velocity != Vector3.zero));
+
+
         if (wander && !spooked)
         {
             wanderTimer -= Time.deltaTime;
             if (wanderTimer <= 0)
             {
                 Wander();
+                animator.SetFloat("Speed", 0.4f);
             }
         }
 
@@ -148,7 +155,7 @@ public class EntityMover : MonoBehaviour
                 agent.SetDestination(finalPos);
             }
         }
-
+        animator.SetFloat("Speed", 2);
         
 
     }

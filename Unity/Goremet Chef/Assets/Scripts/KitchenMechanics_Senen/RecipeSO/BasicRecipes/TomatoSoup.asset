@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Tomato Soup
   ingredientList:
-  - {fileID: 11400000, guid: c81464fa4f4084f438f30aee9995872f, type: 2}
-  - {fileID: 11400000, guid: c81464fa4f4084f438f30aee9995872f, type: 2}
+  - {fileID: 11400000, guid: 96b9d79984032fe44a73ff6ce44aa5cc, type: 2}

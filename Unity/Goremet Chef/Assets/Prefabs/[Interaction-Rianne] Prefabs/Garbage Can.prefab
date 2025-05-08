@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7355341658946897465}
   - component: {fileID: 4347435603520807000}
   - component: {fileID: 1886215983257936916}
+  - component: {fileID: 1173292881193045220}
   m_Layer: 6
   m_Name: Garbage Can
   m_TagString: Untagged
@@ -118,6 +119,28 @@ MonoBehaviour:
   isLootLlama: 0
   health: 2
   maxLlamaHits: 3
+--- !u!95 &1173292881193045220
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799405468582069546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6206ae9f031b74b47a5e64f0e3d0e32c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6360070497768190642
 PrefabInstance:
   m_ObjectHideFlags: 0

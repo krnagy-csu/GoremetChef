@@ -7,17 +7,19 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 {
     public static Player Instance { get; private set; }
     
-    /*public event EventHandler OnPickedSomething;
+    public event EventHandler OnPickedSomething;
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs {
         public BaseCounter selectedCounter;
-    }*/
+    }
     
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask countersLayerMask;
     [SerializeField] private Transform kitchenObjectHoldPoint;
-    
+    [SerializeField] private Animator playerAnimator;
+
+
     private bool isWalking;
     private Vector3 lastInteractDir;
     private BaseCounter selectedCounter;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     private void Update() {
         HandleMovement();
         HandleInteractions();
+        HandleAnimations();
     }
     
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
@@ -140,5 +143,14 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     public bool HasKitchenObject() {
         return kitchenObject != null;
+    }
+
+    /// <summary>
+    /// Animation for kitchen character. handles walking and holding and (if we get selling working) joy animations
+    /// </summary>
+    private void HandleAnimations()
+    {
+        playerAnimator.SetBool("Walking", isWalking);
+        playerAnimator.SetBool("Holding", kitchenObjectHoldPoint.childCount > 0);
     }
 }

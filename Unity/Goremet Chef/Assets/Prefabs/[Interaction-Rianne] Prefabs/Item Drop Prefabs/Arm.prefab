@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1658660637941659407}
   - component: {fileID: 2650242738514351172}
   - component: {fileID: 5616436425454093101}
+  - component: {fileID: 3368943999470780434}
   m_Layer: 7
   m_Name: Arm
   m_TagString: PickUp
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9789d3353c7acdb499779d96da9c5230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: d7876cdd282634cb49055423c11c1303, type: 2}
 --- !u!114 &5616436425454093101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +154,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kitchenObjectSO: {fileID: 11400000, guid: d7876cdd282634cb49055423c11c1303, type: 2}
+--- !u!95 &3368943999470780434
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383669548115723048}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4977e15f910e79746981ff57b8a1a467, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8836744960781954813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,7 +360,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 7d759080d8fe6ce4b972b0a90aa6a66a, type: 3}
     m_RemovedGameObjects:
     - {fileID: -4314764439493069775, guid: 7d759080d8fe6ce4b972b0a90aa6a66a, type: 3}
     - {fileID: 7410821519865028538, guid: 7d759080d8fe6ce4b972b0a90aa6a66a, type: 3}

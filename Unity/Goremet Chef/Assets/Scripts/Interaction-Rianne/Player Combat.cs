@@ -25,6 +25,13 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask hittableLayer;
     public LayerMask pickableLayer;
 
+    [SerializeField] private Animator playerAnimator;
+
+
+    private void Start()
+    {
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +40,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
+            playerAnimator.Play("PlayerAttack", 1);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -73,11 +81,10 @@ public class PlayerCombat : MonoBehaviour
 
     void PickUp()
     {
-        Debug.Log("PickUp called");
         Collider[] hitColliders = Physics.OverlapSphere(attackOrigin.position, attackRange, pickableLayer);
         foreach (Collider hitCollider in hitColliders)
         {
-            Debug.Log("Checking hits");
+
             //Shows which direction the target is in relation to player, then calculates the angle between the direction and the front of the player.
             //This is to check the attack angle and make sure the object isn't behind player
             Vector3 directionToTarget = (hitCollider.transform.position - transform.position).normalized;
@@ -89,7 +96,7 @@ public class PlayerCombat : MonoBehaviour
                 Debug.Log("Picked up: " + hitCollider.name);
                 Item item = hitCollider.GetComponent<ItemController>().item;
                 
-                //This is where I'm gonna have to check weight I think. 
+                //This is where I'm gonna have to check weight 
                 int currentWeight = InventoryManager.Instance.GetCurrentWeight();
                 int newWeight = currentWeight + item.weight;
                 int weightLimit = InventoryManager.Instance.GetWeightLimit();
@@ -101,7 +108,7 @@ public class PlayerCombat : MonoBehaviour
                 else
                 {
                    InventoryManager.Instance.Add(item);
-                   Destroy(hitCollider.gameObject); 
+                   hitCollider.gameObject.SetActive(false); 
                 }
                 
                 

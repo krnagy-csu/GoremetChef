@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6048648271871675369}
   - component: {fileID: 3307183359488377256}
   - component: {fileID: 2018153417773870330}
+  - component: {fileID: 631043667659679663}
   m_Layer: 6
   m_Name: Dumpster
   m_TagString: Untagged
@@ -116,6 +117,28 @@ MonoBehaviour:
   isLootLlama: 0
   health: 2
   maxLlamaHits: 3
+--- !u!95 &631043667659679663
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088540271335984998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c87546c48e7fbc4fb7ddef30a158718, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &7287483885786952158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000333786
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -146,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.008648396
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -154,15 +177,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.50000024
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.50000006
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.49999982
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c237e3029803325448ec2160266c349d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

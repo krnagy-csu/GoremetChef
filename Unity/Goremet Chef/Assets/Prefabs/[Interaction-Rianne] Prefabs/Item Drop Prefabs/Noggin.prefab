@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4608852359678868515}
   - component: {fileID: 7704887717733443731}
   - component: {fileID: 6983967072729130399}
+  - component: {fileID: 7266700815084675445}
   m_Layer: 7
   m_Name: Noggin
   m_TagString: PickUp
@@ -91,6 +92,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 326f8c9dbac2141c78efcb55b92cacd0, type: 2}
+--- !u!95 &7266700815084675445
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400928731331671673}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4977e15f910e79746981ff57b8a1a467, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8163825792606444475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -235,7 +258,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: person
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 7d759080d8fe6ce4b972b0a90aa6a66a, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5525266705404801133, guid: 7d759080d8fe6ce4b972b0a90aa6a66a, type: 3}
     - {fileID: -6794470628045418376, guid: 7d759080d8fe6ce4b972b0a90aa6a66a, type: 3}
