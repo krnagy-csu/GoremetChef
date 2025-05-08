@@ -255,6 +255,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f4c20c3cf19b2d24f98935f8b2dae613, type: 2}
   - {fileID: 11400000, guid: e25bb233a35b0b14596ec79b14e53448, type: 2}
   - {fileID: 11400000, guid: fdb1fc50bf726634ab40f694f450143a, type: 2}
+  - {fileID: 11400000, guid: 96b9d79984032fe44a73ff6ce44aa5cc, type: 2}
+  - {fileID: 11400000, guid: e0aaa6a83bbc6a44c8d328f72942df49, type: 2}
+  - {fileID: 11400000, guid: c8dd423f8dcfe7d4d9d1524e315e0f6a, type: 2}
   kitchenObjectSOList: []
 --- !u!1 &8794351791502988110
 GameObject:
