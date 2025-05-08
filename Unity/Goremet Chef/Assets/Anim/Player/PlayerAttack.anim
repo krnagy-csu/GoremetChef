@@ -56,7 +56,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: person/Armature/Bone/Torso/Shoulder L/Arm L
+    path: Armature/Bone/Torso/Shoulder L/Arm L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -99,7 +99,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: person/Armature/Bone/Torso/Shoulder R/Arm R
+    path: Armature/Bone/Torso/Shoulder R/Arm R
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -112,7 +112,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 943214439
+      path: 1015271239
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -121,7 +121,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4124480919
+      path: 4050458039
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -195,10 +195,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: person/Armature/Bone/Torso/Shoulder L/Arm L
+    path: Armature/Bone/Torso/Shoulder L/Arm L
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -243,10 +243,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: person/Armature/Bone/Torso/Shoulder L/Arm L
+    path: Armature/Bone/Torso/Shoulder L/Arm L
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -291,10 +291,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: person/Armature/Bone/Torso/Shoulder L/Arm L
+    path: Armature/Bone/Torso/Shoulder L/Arm L
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -339,10 +339,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: person/Armature/Bone/Torso/Shoulder R/Arm R
+    path: Armature/Bone/Torso/Shoulder R/Arm R
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -387,10 +387,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: person/Armature/Bone/Torso/Shoulder R/Arm R
+    path: Armature/Bone/Torso/Shoulder R/Arm R
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -435,10 +435,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: person/Armature/Bone/Torso/Shoulder R/Arm R
+    path: Armature/Bone/Torso/Shoulder R/Arm R
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   m_EulerEditorCurves:
   - serializedVersion: 2
     curve:
@@ -448,7 +448,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: person/Armature/Bone/Torso/Shoulder L/Arm L
+    path: Armature/Bone/Torso/Shoulder L/Arm L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -460,7 +460,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: person/Armature/Bone/Torso/Shoulder L/Arm L
+    path: Armature/Bone/Torso/Shoulder L/Arm L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -472,7 +472,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: person/Armature/Bone/Torso/Shoulder L/Arm L
+    path: Armature/Bone/Torso/Shoulder L/Arm L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -484,7 +484,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: person/Armature/Bone/Torso/Shoulder R/Arm R
+    path: Armature/Bone/Torso/Shoulder R/Arm R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -496,7 +496,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: person/Armature/Bone/Torso/Shoulder R/Arm R
+    path: Armature/Bone/Torso/Shoulder R/Arm R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -508,7 +508,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: person/Armature/Bone/Torso/Shoulder R/Arm R
+    path: Armature/Bone/Torso/Shoulder R/Arm R
     classID: 4
     script: {fileID: 0}
     flags: 0

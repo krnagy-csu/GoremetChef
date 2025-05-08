@@ -25,6 +25,13 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask hittableLayer;
     public LayerMask pickableLayer;
 
+    [SerializeField] private Animator playerAnimator;
+
+
+    private void Start()
+    {
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +40,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
+            playerAnimator.Play("PlayerAttack", 1);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
