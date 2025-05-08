@@ -4469,7 +4469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625c0d17b8a6145e9802b0d8346c1693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 15
+  timer: 90
   timerText: {fileID: 813641544}
   timeUpText: {fileID: 1889224816}
   panel: {fileID: 1199606573}
@@ -9533,6 +9533,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 355670753418786501, guid: fdb043877a36cfc48ac74bc3bddeea65, type: 3}
+      propertyPath: jump
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3618609468717504438, guid: fdb043877a36cfc48ac74bc3bddeea65, type: 3}
       propertyPath: m_Name
       value: Player

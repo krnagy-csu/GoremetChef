@@ -15,5 +15,6 @@ MonoBehaviour:
   id: 1
   itemName: Arm
   weight: 5
-  icon: {fileID: 21300000, guid: 372140c9f0627af49aa85b89d3386d46, type: 3}
+  icon: {fileID: 21300000, guid: eb276fc9984c44d00b8a720e5dbda3f9, type: 3}
   prefab: {fileID: 6055347693981871849, guid: 43f94c26a616a4222b498be4af03505f, type: 3}
+  itemType: 0
