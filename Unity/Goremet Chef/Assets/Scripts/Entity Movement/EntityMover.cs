@@ -120,16 +120,24 @@ public class EntityMover : MonoBehaviour
     }
 
     /// <summary>
-    /// When called, picks a random hiding spot (making sure that it's in a valid direction) and paths to it.
+    /// When called, picks a random hiding spot (first trying to find ones away from the player) and paths to it.
     /// </summary>
     private void Flee ()
     {
         agent.speed = fleeSpeed;
         spooked = true;
         spookedTimer = secondsSpooked;
-        bool spotChosen = false;
-        int loops = 0;
-        Vector3 dirToPlayer = gameObject.transform.position - player.transform.position;
+        if (!PickHidingSpot())
+        {
+            targetSpot = hidingSpots[Random.Range(0, hidingSpots.Length)];
+            if (doDebugLogging)
+            {
+                Debug.Log("Picked backup spot" + targetSpot.transform.position);
+            }
+        }
+        agent.SetDestination(targetSpot.transform.position);
+
+        /*
         while (!spotChosen)
         {
             if (loops < maxLoops){
@@ -156,20 +164,33 @@ public class EntityMover : MonoBehaviour
             }
         }
         animator.SetFloat("Speed", 2);
-        
+        */
 
     }
 
     /// <summary>
-    /// Looks at the list of potential hiding spots and picks one at random until it finds one away from the enemy
+    /// Iterates through the list of hiding spots until it finds one away from the enemy
     /// (>90 degrees to the vector pointing to the enemy)
-    /// Increments an integer counter so that a failsafe to avoid an infinite loop can be implemented.
     /// </summary>
-    private int PickHidingSpot(int loops)
+    private bool PickHidingSpot()
     {
-        int random = Random.Range(0, hidingSpots.Length);
-        targetSpot = hidingSpots[random];
-        return loops++;
+        shuffleSpots(hidingSpots);
+        for (int i = 0; i < hidingSpots.Length; i++)
+        {
+            Vector3 dirToPlayer = gameObject.transform.position - player.transform.position;
+            GameObject tempSpot = hidingSpots[i];
+            Vector3 dirToSpot = gameObject.transform.position - tempSpot.gameObject.transform.position;
+            if (Vector3.Angle(dirToSpot,dirToPlayer) > 90)
+            {
+                if (doDebugLogging)
+                {
+                    Debug.Log("Fleeing to " + tempSpot.transform.position);
+                    targetSpot = tempSpot;
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     
     private bool CheckVision()
@@ -177,5 +198,17 @@ public class EntityMover : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(transform.position, (player.transform.position - transform.position), out hit);
         return (hit.transform.gameObject.CompareTag("Player"));
+    }
+
+    GameObject[] shuffleSpots(GameObject[] spots)
+    {
+        for (int i = 0; i < spots.Length; i++)
+        {
+            GameObject temp = spots[i];
+            int random = Random.Range(i, spots.Length);
+            spots[i] = spots[random];
+            spots[random] = temp;
+        }
+        return spots;
     }
 }
