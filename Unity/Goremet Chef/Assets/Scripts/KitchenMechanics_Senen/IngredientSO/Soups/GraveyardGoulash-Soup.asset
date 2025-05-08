@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 20
   itemName: Graveyard Goulash
   weight: 0
-  icon: {fileID: 21300000, guid: 3928afb5321bb3d489bbd4ac581b29a2, type: 3}
+  icon: {fileID: 1955988415, guid: 0989302b3b0e7c34faeaa3d96818263e, type: 3}
   prefab: {fileID: 362181691526549836, guid: 9bfaabe7e5c9a7247b1d01c07e117f89, type: 3}
   itemType: 0

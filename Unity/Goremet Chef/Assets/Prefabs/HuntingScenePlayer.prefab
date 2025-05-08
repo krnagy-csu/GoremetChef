@@ -5562,7 +5562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jump: 5
+  jump: 3
   rotationSpeed: 10
   stamina: 50
   currentstam: 0
@@ -5576,6 +5576,7 @@ MonoBehaviour:
   boostedMaxStamina: 100
   staminaBoostDuration: 8
   staminaBoostEffect: {fileID: 413350862556295933}
+  cameras: []
 --- !u!114 &2573825267909711204
 MonoBehaviour:
   m_ObjectHideFlags: 0

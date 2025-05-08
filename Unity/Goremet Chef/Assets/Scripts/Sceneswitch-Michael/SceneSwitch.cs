@@ -12,13 +12,16 @@ public class SceneSwitch : MonoBehaviour
     [SerializeField] private Animator panel;
 
     private bool timesUp;
-
+    private bool timerStarted = false;
     
     void Update()
     {
         if (!timesUp)
         {
-            timer -= Time.deltaTime;
+            if (timerStarted)
+            {
+                timer -= Time.deltaTime;
+            }
             UpdateTimerUI();
 
             if (timer <= 0)
@@ -56,5 +59,10 @@ public class SceneSwitch : MonoBehaviour
     public void StartFade()
     {
         panel.SetTrigger("FadeOut");
+    }
+
+    public void StartTimer()
+    {
+        timerStarted = true;
     }
 }
