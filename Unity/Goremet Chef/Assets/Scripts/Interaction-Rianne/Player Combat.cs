@@ -73,6 +73,7 @@ public class PlayerCombat : MonoBehaviour
                 if (interact)
                 {
                     interact.TakeDamage(damage);
+                    GetComponent<AttackSound>()?.PlayAttackSound();
                 }
             }
         }
