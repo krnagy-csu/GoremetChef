@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackgroundSound : MonoBehaviour
 {
@@ -11,29 +12,37 @@ public class BackgroundSound : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        PlayStandardMusic();
+
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Town" && hunterMusic != null)
+        {
+            PlayHunterMusic();
+        }
+        else if (sceneName == "Kitchen" && standardBackgroundMusic != null)
+        {
+            PlayStandardMusic();
+        }
+
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void PlayHunterMusic()
     {
-        if (hunterMusic != null && !isPlayingHunterMusic)
-        {
-            isPlayingHunterMusic = true;
-            audioSource.clip = hunterMusic;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
+
+        isPlayingHunterMusic = true;
+        audioSource.clip = hunterMusic;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void PlayStandardMusic()
     {
-        if (standardBackgroundMusic != null)
-        {
-            isPlayingHunterMusic = false;
-            audioSource.clip = standardBackgroundMusic;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
+        isPlayingHunterMusic = false;
+        audioSource.clip = standardBackgroundMusic;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 }
 
