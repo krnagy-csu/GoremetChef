@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -48,6 +49,17 @@ public class PlayerMovement : MonoBehaviour
     public float staminaBoostDuration = 8f;
     public ParticleSystem staminaBoostEffect;
 
+    //Cameras for effects
+    [SerializeField] CinemachineCamera[] cameras;
+    private bool moveCamera;
+    private int startFOV;
+    private int targetFOV;
+    private float camTimer = 0;
+    [SerializeField] private float lerpTime = 0.4f;
+
+    private bool crouching;
+    private bool sprinting;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -57,6 +69,27 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        crouching = false;
+        sprinting = false;
+
+        if (moveCamera)
+        {
+            if (camTimer <= lerpTime)
+            {
+                camTimer += Time.deltaTime;
+                for (int i = 0; i < cameras.Length; i++)
+                {
+                    cameras[i].Lens.FieldOfView = Mathf.Lerp(startFOV,targetFOV,camTimer/lerpTime);
+                }
+            }
+            else
+            {
+                moveCamera = false;
+                camTimer = 0;
+            }
+        }
+
+
         isGrounded = controller.isGrounded;
         playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity());
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && !isCrouched)
@@ -74,6 +107,8 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() * 1.5f);
+                    LerpCamera(75);
+                    sprinting = true;
                 }
             }
         }
@@ -104,9 +139,10 @@ public class PlayerMovement : MonoBehaviour
             }
             else //Otherwise, make it the normal crouch range
             {
-                playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2);
+                playerSpotting.SetVisibility(playerSpotting.GetBaseVisiblity() / 2); 
             }
-            
+            LerpCamera(50);
+            crouching = true;
         }
         else 
         {
@@ -148,6 +184,11 @@ public class PlayerMovement : MonoBehaviour
         
         move.y = verticalVelocity;
         controller.Move(move * (jump * Time.deltaTime));
+
+        if (!(crouching || sprinting))
+        {
+            LerpCamera(60);
+        }
     }
 
     public void StaminaBoost()
@@ -206,4 +247,17 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("isStealthBoosted: false");
         
     }
+    private void LerpCamera(int newfov)
+    {
+        float camFOV = cameras[0].Lens.FieldOfView;
+        if (!moveCamera){
+            if (newfov != camFOV)
+            {
+                startFOV = (int)camFOV;
+                targetFOV = newfov;
+                moveCamera = true;
+            }
+        }
+    }
+ 
 }
