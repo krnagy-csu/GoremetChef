@@ -8,9 +8,18 @@ public class ChopSound : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.loop = true;
+        audioSource.loop = false;
     }
 
+    public void PlayChopSound()
+    {
+        if (chopClip != null)
+        {
+            audioSource.PlayOneShot(chopClip);
+        }
+    }
+    
+//Disreguard these
     public void StartChopping()
     {
         if (chopClip != null && !audioSource.isPlaying)

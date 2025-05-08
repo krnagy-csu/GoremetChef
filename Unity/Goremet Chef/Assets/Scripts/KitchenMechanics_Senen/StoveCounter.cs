@@ -40,12 +40,18 @@ public class StoveCounter : BaseCounter
                 KitchenObject currentObject = GetKitchenObject();
                 currentObject.DestroySelf();  // Make sure DestroySelf also clears the reference
 
+                GetComponent<CookingSizzleSound>()?.StopSizzle();
+
                 //Spawn the new item (output)
                 KitchenObject.SpawnKitchenObject(activeRecipe.output, this);
 
                 //Get the next recipe ready
                 activeRecipe = GetRecipeForInput(activeRecipe.output);
                 cookingTimer = 0f;
+            }
+            else
+            {
+                GetComponent<CookingSizzleSound>()?.StartSizzle();        
             }
         }
     }

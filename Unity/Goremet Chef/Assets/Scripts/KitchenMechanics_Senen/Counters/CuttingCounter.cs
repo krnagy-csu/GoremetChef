@@ -41,7 +41,9 @@ public class CuttingCounter : BaseCounter {
         if (HasKitchenObject() && HasRecipeWithInput(GetKitchenObject().GetKitchenObjectSO())) {
             // There is a KitchenObject here AND it can be cut
             cuttingProgress++;
-            
+
+            GetComponent<ChopSound>()?.PlayChopSound();
+
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
             if (cuttingProgress >= cuttingRecipeSO.cuttingProgressMax) {

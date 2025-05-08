@@ -30,24 +30,19 @@ public class BackgroundSound : MonoBehaviour
 
     public void PlayHunterMusic()
     {
-        if (hunterMusic != null)
-        {
-            isPlayingHunterMusic = true;
-            audioSource.clip = hunterMusic;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
+
+        isPlayingHunterMusic = true;
+        audioSource.clip = hunterMusic;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void PlayStandardMusic()
     {
-        if (standardBackgroundMusic != null)
-        {
-            isPlayingHunterMusic = false;
-            audioSource.clip = standardBackgroundMusic;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
+        isPlayingHunterMusic = false;
+        audioSource.clip = standardBackgroundMusic;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 }
 
